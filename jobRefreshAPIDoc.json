@@ -120,10 +120,10 @@
             }
           },
           "400": {
-            "description": "Bad Request: AccountDID and JobDID are required"
+            "description": "Bad Request: AccountDID is required, JobDID is required"
           },
           "401": {
-            "description": "Error Result: Account not found, Insufficient credit, Job expired, Job not found, Credit deducation failed, Database connection failed, Refresh failed"
+            "description": "Error Result: Account not found, Insufficient credit, Job expired, Job not found"
          },
           "404": {
             "description": "Not Found"
