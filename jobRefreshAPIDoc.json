@@ -1,1673 +1,215 @@
-{
-  "routes": [
-    {
-      "incomingURI": "/corporate/jobposterapi",
-      "ownerTeamEmail": "RecruiterDesktopDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/jobposterapinew",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/browser-id",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/browserid",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/api/bid",
-          "host": "https://bid.cbmtn.io"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/coverletters",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/coverletter",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/datalist",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/datalist",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/edge",
-      "ownerTeamEmail": "RecruitmentEdge@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/edge",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/email-subscriptions",
-      "ownerTeamEmail": "emailproductservices@cb.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://email-subscriptions-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/email-token",
-      "ownerTeamEmail": "emailproductservices@cb.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://email-token-production.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/insights",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://insights.cbmtn.io"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/insights/keywords",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/keywords",
-          "host": "https://resume-insights-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/job-insights",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/job-insights",
-          "host": "https://api.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/jobdistribution/requisition",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobapi.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/jobs/recommendations",
-      "ownerTeamEmail": "SearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/jobsearch/recommendations",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/recs/job",
-          "host": "https://recs-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/recommendations",
-      "ownerTeamEmail": "jobsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/recs",
-          "host": "https://recs-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/jobs/search",
-      "ownerTeamEmail": "SearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/Search/JobSearch/JobSearch.aspx",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "3.0",
-          "targetURI": "/jobsearch/jobs/",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/lastactivity",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/activity",
-          "host": "https://last-activity-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/resumedocuments",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/resumedocuments",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/resumes",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/resumes",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "5.0",
-          "targetURI": "/resumes",
-          "host": "https://resumes.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/saved-jobs",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/savedjob",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/talentnetwork",
-      "ownerTeamEmail": "acquisitionandplatformdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/talentnetwork/internal/",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/talentnetwork/joinform",
-      "ownerTeamEmail": "acquisitionandplatformdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/joinform",
-          "host": "https://joinformapi.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/talentnetwork/member/classification",
-      "ownerTeamEmail": "acquisitionandplatformdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/classification",
-          "host": "https://members-node-api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/talentnetwork/member/source",
-      "ownerTeamEmail": "talentnetworkdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/source",
-          "host": "https://members-node-api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/talentnetwork/job-data",
-      "ownerTeamEmail": "careersitemanagement@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/job",
-          "host": "https://jobs-api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/user/preferences",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/preferences",
-          "host": "https://inteljs-visitor-class-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/user-profile",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/user",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/userprofile",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/userprofile",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/userinformation",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/userinformation",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/visitor",
-          "host": "https://visitorapi.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor/classify",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/classification",
-          "host": "https://inteljs-classifier-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor/classification",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/VisitorClassification",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "1.0",
-          "targetURI": "/visitor/classification",
-          "host": "https://inteljs-visitor-class-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor/events",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/events",
-          "host": "https://inteljs-visitor-events-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor/events/track",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/events/track",
-          "host": "https://visitor.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitor/state",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/VisitorState",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "1.0",
-          "targetURI": "/visitor/state",
-          "host": "https://inteljs-visitor-state-prod.cbdanger.zone"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/visitor/state",
-          "host": "https://inteljs-visitor-class-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/visitorsummary",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/visitorartifacts",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/visitorsummary",
-          "host": "https://inteljs-visitor-summary-prod.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/consumer/employment-signal",
-      "ownerTeamEmail": "emailproductservices@cb.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://employment-signal-production.cbdanger.zone"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/apply/applicant-info",
-      "ownerTeamEmail": "ApplyExperience@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/prod",
-          "host": "https://smap2y0eoa.execute-api.us-east-1.amazonaws.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/bi/jobtitlesbyskill",
-      "ownerTeamEmail": "BISAA@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/jobtitlesbyskill",
-          "host": "https://biapi.cb.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/bi/skillsbyjobtitle",
-      "ownerTeamEmail": "BISAA@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/skillsbyjobtitle",
-          "host": "https://biapi.cb.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/bi/skillsbymultiplejobtitles",
-      "ownerTeamEmail": "BISAA@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/skillsbymultiplejobtitles",
-          "host": "https://biapi.cb.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/SemanticOverrides",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://semanticsearchoverridesapi-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/blockedipaddress",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://s3.amazonaws.com/cbplatform-apidoc/blockedipaddress.json",
-          "version": "default",
-          "targetURI": "/framework/blockedip",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/framework/blockedipaddress",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/bounce",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/bounce",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/candidatestream/candidate",
-      "ownerTeamEmail": "atsintegrationservices@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/prod/candidatestream/candidate",
-          "host": "https://92ryzba018.execute-api.us-east-1.amazonaws.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/candidatestream/atsinfo/candidatestatus",
-      "ownerTeamEmail": "candidatestream@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://candidatestatus-api-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/classifier/jobtitle",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/classify",
-          "host": "https://jobtitleus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/classifier/resolvedtitle",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/resolvetitle",
-          "host": "https://jobtitleus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/classifier/likelihoodtorespond",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/likelihoodtorespond",
-          "host": "https://likelihoodtorespondservice-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/framework/user",
-      "ownerTeamEmail": "consumerdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/framework/user",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/framework/offlinetoken",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/framework/offlinetoken",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/geography/geocoding",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/geocoding",
-          "host": "https://geocodingus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/geography/entities",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://geoentity-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/translation",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/translation",
-          "host": "https://translationservice-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/hive/stream",
-      "ownerTeamEmail": "BigDataPlatformTeam@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://flume.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/internalipaddress",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://s3.amazonaws.com/cbplatform-apidoc/internalipaddress.json",
-          "version": "default",
-          "targetURI": "/framework/internalip",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/framework/internalipaddress",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/iplocation",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/iplocation",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/job/cache",
-      "ownerTeamEmail": "Jobdistributiondev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobcacheservice.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/cache",
-      "ownerTeamEmail": "Jobdistributiondev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobcacheservice.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobevents",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/jobevents",
-          "host": "https://jobevents.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/events",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/jobevents",
-          "host": "https://jobevents.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobgeoresults",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobgeoresults.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/geography/strategyresults",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobgeoresults.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/InternalJobs",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/attributes",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/InternalJobs/Attributes",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/geography",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobgeography.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/oldgeo",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/JobIntegration/Geography",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/jobs/integrity",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobintegrity.cbjobintegration.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/matrixsearch/searchapi",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/searchapi",
-          "host": "https://searchapi.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/normalizedcompanies",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/normalizedcompany",
-          "host": "https://companynormalizationus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/normalizedschools",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/normalizedschool",
-          "host": "https://schoolnormus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/parsing/normalizedresume",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/parseandnormalize",
-          "host": "https://parseandnormalizeus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/parsing/normalizedjob",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest/jobparseandnormalize",
-          "host": "https://jobparseandnorm-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/relevancy",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/relevancy",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/resumes",
-      "ownerTeamEmail": "ConsumerDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbapi/resumedata",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/search",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/search",
-          "host": "https://us.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/search/searchapi/deletedocument",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/search/searchapi/deletedocument",
-          "host": "https://us-feed.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/search/searchapi/document",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/search/searchapi/document",
-          "host": "https://us-feed.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/search/searchapi/putdocument",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/search/searchapi/putdocument",
-          "host": "https://us-feed.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/search/semantic",
-      "ownerTeamEmail": "searchdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://rr-webservices-production.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/SemanticSearch",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/Search/SemanticSearch",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "1.0",
-          "targetURI": "/semanticsearch",
-          "host": "https://semanticsearchapi-us.ace.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/semanticsearch",
-          "host": "https://semanticsearchapi-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/semanticsearch/autocomplete",
-      "ownerTeamEmail": "SearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/relevancy/fstautocomplete",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/tagging/joblevel",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/joblevel",
-          "host": "https://joblevel-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/tagging/skills",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/getskills",
-          "host": "https://skillsus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/tagging/spamdetector",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/keywordstuffingdetector",
-          "host": "https://dsad-kwsdetector-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/taxonomy",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest",
-          "host": "https://taxonomyus.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/virusscanner",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/VirusScanner-1.0/scan",
-          "host": "https://virusscanning-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/tagging/edgematching",
-      "ownerTeamEmail": "datascienceapplicationdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/matching",
-          "host": "https://edgematching-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/core/zuulintegration",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/public/integration-endpoint",
-          "host": "https://q3ys0ue7xc.execute-api.us-east-1.amazonaws.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/account/accounts",
-      "ownerTeamEmail": "CAProducts&PurchasingTeam@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/account/accounts/",
-          "host": "https://itservicesauth.cb.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/activesupplyservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-activesupply.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/associations",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/copwie.json",
-          "version": "default",
-          "targetURI": "/cowpie",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/my/product/instances",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/my.json",
-          "version": "default",
-          "targetURI": "/my/product/instances",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/products",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/products.json",
-          "version": "default",
-          "targetURI": "/products",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/login/risk",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/login.json",
-          "version": "default",
-          "targetURI": "/login/risk",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/saml/partner",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/framework/auth/saml",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/userinfo",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/framework/auth/userinfo",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/v2/userinfo",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/framework/auth/v2/userinfo",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/user",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/framework/auth/user",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/user/audit",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/user.json",
-          "version": "default",
-          "targetURI": "/user/audit",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/user/topic",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "https://api.careerbuilder.com/corporate/auth/products/docs/user.json",
-          "version": "default",
-          "targetURI": "/user/topic",
-          "host": "http://userauth.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/auth/users",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/framework/auth/users",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/authorization",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/authorization",
-          "host": "http://authserver.cbplatform.link"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/candidate-actions",
-      "ownerTeamEmail": "CandidateSearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/actions",
-          "host": "https://cs-actionsapi-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/candidatesearch",
-      "ownerTeamEmail": "CandidateSearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/CandidateSearchAPI",
-          "host": "https://candidate-search-useast.cb-search.com"
-        },
-        {
-          "version": "1",
-          "targetURI": "/CandidateSearchAPI",
-          "host": "https://candidate-search-useast-v1.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/candidatesearch/search",
-      "ownerTeamEmail": "CandidateSearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/CandidateSearchAPI/search",
-          "host": "https://candidate-search-useast-read.cb-search.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/CandidateStatus",
-      "ownerTeamEmail": "CandidateSearchDevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://cs-statusapi-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/cbsearch",
-      "ownerTeamEmail": "OneSearchUX@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/cbsearch",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/cbsearchapi",
-      "ownerTeamEmail": "OneSearchUX@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/api",
-          "host": "https://candidatessv.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/msemailer",
-      "ownerTeamEmail": "OneSearchUX@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/msemailer",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/campaign-management",
-      "ownerTeamEmail": "talentnetworkdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://campaign-api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/compensationservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-compensation.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/demanddataservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-demanddata.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/ecom/coupon",
-      "ownerTeamEmail": "ecomdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/intl/ecomcoupon/applydiscount",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/edge",
-      "ownerTeamEmail": "recruitmentedge@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/edge/corporate",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/hiringindicatorservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-hiringindicator.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/jobdistribution/requisition",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://jobapi.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/jobs",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/JobIntegrationMVC/Jobs",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/jobs/attributes",
-      "ownerTeamEmail": "JobDistributionDev@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/JobIntegrationMVC/Jobs",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/marketrankingservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-marketranking.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentgather",
-      "ownerTeamEmail": "collegesolutions@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://tgapi-us.cr.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/mysupply/candidate",
-      "ownerTeamEmail": "candidatedataprocessing@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/candidatedata/mysupply",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/mysupply/search",
-      "ownerTeamEmail": "candidatedataprocessing@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/candidatedata/mysupply/search",
-          "host": "https://swarm.careerbuilder.com"
-        },
-        {
-          "version": "2.0",
-          "targetURI": "/candidatedata/mysupply/v2/search",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/mysupply/upload",
-      "ownerTeamEmail": "candidatedataprocessing@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/candidatedata/mysupply/upload",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/mysupply/client",
-      "ownerTeamEmail": "candidatedataprocessing@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/candidatedata/mysupply/client",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/onetsuggest",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-onetauto.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/purchasing/account/currentproducts",
-      "ownerTeamEmail": "CorpAppInfrastructureTeam@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/purchasing/account/currentproducts",
-          "host": "https://itservicesauth.cb.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/resumerefresh",
-      "ownerTeamEmail": "candidatedataprocessing@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/mycandidates/resumerefresh",
-          "host": "https://resumerefresh-us.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/rdb",
-      "ownerTeamEmail": "CorpAppInfrastructureTeam@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/resumes/resumes.asmx",
-          "host": "https://ws.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/supplydemandservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-supplydemand.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/supplyservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "documentationLink": "",
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-supplyservice.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentnetwork",
-      "ownerTeamEmail": "talentnetworkdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/talentnetwork/internal",
-          "host": "https://swarm.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentnetwork/private-invitation",
-      "ownerTeamEmail": "talentnetworkdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/invitation",
-          "host": "https://api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentnetwork/test/private-invitation",
-      "ownerTeamEmail": "tnjobboard@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/invitation",
-          "host": "https://api-test.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentnetwork/test/private-invitation/auth",
-      "ownerTeamEmail": "tnjobboard@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/invitation/authorization",
-          "host": "https://test-invites.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/talentnetwork/delete-credentials",
-      "ownerTeamEmail": "talentnetworkdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/credentials",
-          "host": "https://api.cbtalentnetwork.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/totalsupplyservice",
-      "ownerTeamEmail": "workforceanalyticsdevelopment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://wfa-totalsupply.ace.careerbuilder.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/us/tsr",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/tsr",
-          "host": "https://api-us.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/us/ats-api-proxy",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://proxy-api-us.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/us/ats/draft-requisitions",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/draft-requisitions",
-          "host": "https://draft-reqs-us.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/eu/ats/draft-requisitions",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/draft-requisitions",
-          "host": "https://draft-reqs-eu.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/workterra",
-      "ownerTeamEmail": "saurabh.sablaka@harbingergroup.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest",
-          "host": "https://www.workterra.net"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/demo/workterra",
-      "ownerTeamEmail": "saurabh.sablaka@harbingergroup.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/rest",
-          "host": "https://azure.workterra.net"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/eu/ats-api-proxy",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/",
-          "host": "https://proxy-api-eu.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/corporate/eu/tsr",
-      "ownerTeamEmail": "CB1TestingAndDeployment@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/tsr",
-          "host": "https://api-eu.cb1tools.com"
-        }
-      ]
-    },
-    {
-      "incomingURI": "/oauth",
-      "ownerTeamEmail": "platformsoftware@careerbuilder.com",
-      "versions": [
-        {
-          "version": "default",
-          "targetURI": "/oauth",
-          "host": "http://authserver.cbplatform.link"
-        }
-      ]
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                                                              {
+  "swagger": "2.0",
+  "info": {
+    "description": "Job Refresh API description",
+    "version": "1.0.0",
+    "title": "Job Refresh API"
+  },
+  "host": "www.careerbuilder.com",
+  "basePath": "/JC/API/jobrefresh",
+  "tags": [
+    {
+      "name": "Job Refresh",
+      "description": "Job Refresh API"
     }
-  ]
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Get": {
+      "get": {
+        "tags": [
+          "Job Refresh"
+        ],
+        "summary": "Get credit count by accountDID",
+        "description": "",
+        "operationId": "GetCredCount",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "required": true,
+            "type": "string",
+            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetCreditCountAPIResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: AccountDID is required"
+          },
+          "401": {
+            "description": "Error Result: Account not found, No rerefresh credit, Insufficient credit"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Refresh": {
+      "post": {
+        "tags": [
+          "Job Refresh"
+        ],
+        "summary": "refresh one job by jobdDID and accountDID",
+        "description": "",
+        "operationId": "RefreshJob",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "required": true,
+            "type": "string",
+            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "jobDID that job will be refreshed",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/refreshjobDIDRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RefreshJobAPIResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: AccountDID and JobDID are required"
+          },
+          "401": {
+            "description": "Error Result: Account not found, Insufficient credit, Job expired, Job not found, Credit deducation failed, Database connection failed, Refresh failed"
+         },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "refreshjobDIDRequest": {
+      "type": "object",
+      "required": [
+        "jobdid"
+      ],
+      "properties": {
+        "jobdid": {
+          "type": "string",
+          "example": "jj57sp752fpphhcwhy9"
+        }
+      }
+    },
+    "GetCreditCountResult": {
+      "type": "object",
+      "properties": {
+        "UsageProductID": {
+          "type": "string"
+        },
+        "RemainingsCount": {
+          "type": "string"
+        },
+        "ExpiredDate": {
+          "type": "string"
+        }
+      }
+    },
+    "APIResponseError": {
+      "type": "object",
+      "properties": {
+        "Error": {
+          "type": "string"
+        }
+      }
+    },
+    "GetCreditCountAPIResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "$ref": "#/definitions/APIResponseError"
+        },
+        "Results": {
+          "$ref": "#/definitions/GetCreditCountResult"
+        }
+      }
+    },
+    "RefreshJobResult": {
+      "type": "object",
+      "properties": {
+        "JobDID": {
+          "type": "string"
+        },
+        "RefreshDate": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        }
+      }
+    },
+    "RefreshJobAPIResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "$ref": "#/definitions/APIResponseError"
+        },
+        "Results": {
+          "$ref": "#/definitions/RefreshJobResult"
+        }
+      }
+    }
+  }
 }
