@@ -1,0 +1,219 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Account add new user API description",
+    "version": "1.0.0",
+    "title": "Account User API"
+  },
+  "host": "api.careerbuilder.com",
+  "basePath": "/corporate/jobposterapi/AccountUsers",
+  "tags": [
+    {
+      "name": "Account User",
+      "description": ""
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Get": {
+      "get": {
+        "tags": [
+          "Account User"
+        ],
+        "summary": "Get users info by accountDID and UserDID, THE METHOD HAS LIVED ON PRODUCTION",
+        "description": "",
+        "operationId": "GetAccountUser",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "required": true,
+            "type": "string",
+            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetAccountUserResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: AccountDID is required, UserDID is required"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/RegisterUser": {
+      "post": {
+        "tags": [
+          "Account User"
+        ],
+        "summary": "register new user with accountDID",
+        "description": "",
+        "operationId": "RegisterUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "required": true,
+            "type": "string",
+            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information for registered",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserResult"
+            }
+          },
+          "400": {
+            "description": "Bad Request: AccountDID is required, missing some user data to register"
+          },
+          "401": {
+            "description": "Error Result: Account not found"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegisterUserRequest": {
+      "type": "object",
+      "required": [
+        "Status",
+        "Email",
+        "FirstName",
+        "LastName",
+        "Password"
+      ],
+      "properties": {
+        "Email": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        }
+      }
+    },
+    "GetAccountUserResult": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        }
+      }
+    },
+    "APIResponseError": {
+      "type": "object",
+      "properties": {
+        "Error": {
+          "type": "string"
+        }
+      }
+    },
+    "GetAccountUserResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "$ref": "#/definitions/APIResponseError"
+        },
+        "Results": {
+          "$ref": "#/definitions/GetAccountUserResult"
+        }
+      }
+    },
+    "RegisterUserResult": {
+      "type": "object",
+      "properties": {
+        "UserDID": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        }
+      }
+    },
+    "RegisterUserResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "$ref": "#/definitions/APIResponseError"
+        },
+        "Results": {
+          "$ref": "#/definitions/RegisterUserResult"
+        }
+      }
+    }
+  }
+}
