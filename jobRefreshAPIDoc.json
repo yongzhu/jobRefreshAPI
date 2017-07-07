@@ -5,8 +5,8 @@
     "version": "1.0.0",
     "title": "Job Refresh API"
   },
-  "host": "www.careerbuilder.com",
-  "basePath": "/JC/API/jobrefresh",
+  "host": "api.careerbuilder.com",
+  "basePath": "/corporate/jobposterapi/jobrefresh",
   "tags": [
     {
       "name": "Job Refresh",
