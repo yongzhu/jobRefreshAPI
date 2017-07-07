@@ -187,9 +187,6 @@
         "JobDID": {
           "type": "string"
         },
-        "RefreshDate": {
-          "type": "string"
-        },
         "Status": {
           "type": "string"
         }
