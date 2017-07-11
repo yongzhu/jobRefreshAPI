@@ -101,7 +101,12 @@
           "type": "string"
         },
         "Status": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "Disabled",
+            "Enabled",
+            "Deleted"
+          ]
         },
         "FirstName": {
           "type": "string"
@@ -132,6 +137,10 @@
           "type": "string"
         },
         "Status": {
+          "type": "string"
+        }
+        ,
+        "AccountDID": {
           "type": "string"
         }
       }
