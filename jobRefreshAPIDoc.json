@@ -52,10 +52,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: AccountDID is required"
-          },
-          "401": {
-            "description": "Error Result: Account not found, No rerefresh credit, Insufficient credit"
+            "description": "Bad Request: No Refresh Credit, Fail to get refresh credit count"
           },
           "404": {
             "description": "Not Found"
@@ -120,10 +117,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: AccountDID is required, JobDID is required"
-          },
-          "401": {
-            "description": "Error Result: Account not found, Insufficient credit, Job expired, Job not found"
+            "description": "Bad Request: JobDID is required, Job isn't active, Job's accountDID isn't same as request AccountDID, Job not found, Insufficient refresh credit, Fail to refresh job"
          },
           "404": {
             "description": "Not Found"
