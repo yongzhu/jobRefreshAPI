@@ -170,6 +170,12 @@
           "items": {
             "$ref": "#/definitions/PurchasedProductResponse"
           }
+        },
+        "DeducatStatus": {
+          "type": "string"
+        },
+        "RemainingQuota": {
+          "type": "string"
         }
       }
     },
