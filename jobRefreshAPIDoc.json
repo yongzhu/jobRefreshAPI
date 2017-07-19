@@ -190,10 +190,16 @@
       "type": "object",
       "properties": {
         "Errors": {
-          "$ref": "#/definitions/APIResponseError"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
         },
         "Results": {
-          "$ref": "#/definitions/RefreshJobResult"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RefreshJobResult"
+          }
         }
       }
     }
