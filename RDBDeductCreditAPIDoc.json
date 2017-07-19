@@ -3,7 +3,7 @@
   "info": {
     "description": "RDB Credit Deduction API description",
     "version": "1.0.0",
-    "title": "DB Credit Deduction API"
+    "title": "DB Credit Deduction API "
   },
   "host": "api.careerbuilder.com",
   "basePath": "/corporate/jobposterapi/RDB",
