@@ -1,0 +1,203 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "RDB Credit Deduction API description",
+    "version": "1.0.0",
+    "title": "DB Credit Deduction API"
+  },
+  "host": "api.careerbuilder.com",
+  "basePath": "/corporate/jobposterapi/RDB",
+  "tags": [
+    {
+      "name": "RDB Credit Deduction",
+      "description": ""
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/DeductCredit": {
+      "post": {
+        "tags": [
+          "RDB Credit Deduction"
+        ],
+        "summary": "RDB Credit Deduction",
+        "description": "",
+        "operationId": "CreditDeduction",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information for registered",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeductCreditRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/DeductCreditResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: ProductCode is required, ProductCode is invalid, Remaining quota is Zero, Remaining quota less than requested resumes count, Get exception when deduct credit"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DeductCreditRequest": {
+      "type": "object",
+      "required": [
+        "JobPosterUserEmail",
+        "ProductCode",
+        "Resumes",
+        "TotalResumes"
+      ],
+      "properties": {
+        "JobPosterUserEmail": {
+          "type": "string",
+          "example": "demoUserEmail@test.com"
+        },
+        "ProductCode": {
+          "type": "string",
+          "example": "FPRDBUSGEA"
+        },
+        "Resumes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeductCreditResumeRequest"
+          }
+        },
+        "TotalResumes": {
+          "type": "string",
+          "example": "2"
+        }
+      }
+    },
+    "DeductCreditResumeRequest": {
+      "type": "object",
+      "properties": {
+        "ResumeRID": {
+          "type": "string",
+          "example": "exampleResumeRID"
+        }
+      }
+    },
+    "APIResponseError": {
+      "type": "object",
+      "properties": {
+        "Error": {
+          "type": "string"
+        }
+      }
+    },
+    "PurchasedProductResponse": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "type": "string"
+        },
+        "ActivationDate": {
+          "type": "string"
+        },
+        "Balance": {
+          "type": "string"
+        },
+        "ExpiryDate": {
+          "type": "string"
+        }
+      }
+    },
+    "DeductCreditResponse": {
+      "type": "object",
+      "properties": {
+        "AccountDID": {
+          "type": "string"
+        },
+        "JobPosterUserEmail": {
+          "type": "string"
+        },
+        "ProductCode": {
+          "type": "string"
+        },
+        "RemainingQuota": {
+          "type": "string"
+        },
+        "Resumes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeductCreditResumeRequest"
+          }
+        },
+        "Products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurchasedProductResponse"
+          }
+        },
+        "DeducatStatus": {
+          "type": "string"
+        },
+        "AfterRemainingQuota": {
+          "type": "string"
+        }
+      }
+    },
+    "DeductCreditResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
+        },
+        "Results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeductCreditResponse"
+          }
+        }
+      }
+    }
+  }
+}
