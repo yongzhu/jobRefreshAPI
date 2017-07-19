@@ -56,7 +56,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "user information for registered",
+            "description": "account information for deduction",
             "required": true,
             "schema": {
               "$ref": "#/definitions/DeductCreditRequest"
