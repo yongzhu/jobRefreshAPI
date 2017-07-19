@@ -29,14 +29,14 @@
           {
             "in": "header",
             "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
             "required": true,
-            "type": "string",
-            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+            "type": "string" 
           },
           {
             "in": "header",
-            "name": "AUTHORIZATION",
-            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "name": "AUTHORIZATION", 
+            "default": "",
             "required": true,
             "type": "string"
           }
@@ -81,14 +81,14 @@
           {
             "in": "header",
             "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
             "required": true,
-            "type": "string",
-            "default": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuY2FyZWVyYnVpbGRlciIsImF1ZCI6Ii9jb3JlL3Rlc3RpbmdlbmRwb2ludC9oZWFkZXJzIiwiaWF0IjoxNDk4ODA0OTI5LCJleHAiOjE0OTg4MDg1Mjl9.XVQHYrbRG7fIubEhvQwSiDxKecOEuP1xgVJeee6_gp-g982FPSQFC6AovqkCEHWF5axS6uorW-fEK_6ouBLj1aqeg_dhVFYlGmFge4N83P5aQdMKPdSDA6LIJ8Mvd-7fZj1zA-0XIIx7ge82j40WiuxsPY6-6FeBiv-OjDooVDQ"
+            "type": "string"
           },
           {
             "in": "header",
             "name": "AUTHORIZATION",
-            "default": "cid=C93ef6dcd|cbu=UKD0GN6G7RVK6X25JZ1|cba=AKD4036XSSDV552BGJD|oid=2445581102341|cbiu=",
+            "default": "",
             "required": true,
             "type": "string"
           },
@@ -168,10 +168,16 @@
       "type": "object",
       "properties": {
         "Errors": {
-          "$ref": "#/definitions/APIResponseError"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
         },
         "Results": {
+          "type": "array",
+          "items": {
           "$ref": "#/definitions/GetCreditCountResult"
+          }
         }
       }
     },
