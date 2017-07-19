@@ -159,9 +159,6 @@
         "ProductCode": {
           "type": "string"
         },
-        "RemainingQuota": {
-          "type": "string"
-        },
         "Resumes": {
           "type": "array",
           "items": {
@@ -173,12 +170,6 @@
           "items": {
             "$ref": "#/definitions/PurchasedProductResponse"
           }
-        },
-        "DeducatStatus": {
-          "type": "string"
-        },
-        "AfterRemainingQuota": {
-          "type": "string"
         }
       }
     },
