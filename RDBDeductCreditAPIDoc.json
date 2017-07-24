@@ -108,7 +108,7 @@
           }
         },
         "TotalResumes": {
-          "type": "string",
+          "type": "number",
           "example": "2"
         }
       }
@@ -171,11 +171,11 @@
             "$ref": "#/definitions/PurchasedProductResponse"
           }
         },
-        "DeducatStatus": {
+        "DeductStatus": {
           "type": "string"
         },
         "RemainingQuota": {
-          "type": "string"
+          "type": "number"
         }
       }
     },
