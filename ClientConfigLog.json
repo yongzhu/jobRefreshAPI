@@ -1,0 +1,212 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "As we expose more self serve features to end clients, we need to track when and what customers made changes and provide that insight to both end clients and internal support team. Today our individual CB products track customer behavior separately, most of time not completely. We also store related data in separate locations which made it difficult to have a complete view of what changes customers have made. With the launch of this micro service and associated API, we will give CB product families a centralized location to submit configuration changes made by end clients.",
+        "version": "1.0.0",
+        "title": "Micro Service: Client Config Log "
+    },
+    "host": "api.careerbuilder.com",
+    "basePath": "/corporate/ClientConfigLog",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/dataTrack": {
+            "post": {
+                "tags": [
+                    "Save Client Config Log Data"
+                ],
+                "summary": " track config data change and related details",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X_PROXY_SECRET_TOKEN",
+                        "required": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "in": "header",
+                        "name": "AUTHORIZATION",
+                        "default": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Content-Type",
+                        "default": "application/json",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "request JSON data to log",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ConfigLogRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConfigLogResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request: EndClientEntityID is required, ProductInstanceID is required, AccountID is required, OwnerID is required, ClientID is required, ClientFacingProductName is required, CustomerFacingText is required, SystemEntityID is required, AccessType is required, ActionType is required, TrustBoundaryClientIP is required, ContextBoundaryNetworkIP is required, RequestID is required, ChangeDateTime is required, SystemTimeStamp is required"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ConfigLogRequest": {
+            "type": "object",
+            "required": [
+                "EndClientEntityID",
+                "ProductInstanceID",
+                "AccountID",
+                "OwnerID",
+                "ClientID",
+                "ClientFacingProductName", 
+                "CustomerFacingText",              
+                "SystemEntityID",
+                "AccessType",
+                "ActionType",
+                "TrustBoundaryClientIP",
+                "ContextBoundaryNetworkIP",
+                "RequestID",
+                "ChangeDateTime",
+                "SystemTimeStamp"
+            ],
+            "properties": {
+                "EndClientEntityID": {
+                    "type": "string",
+                    "example": "demoUserEmail@test.com"
+                },
+                "ProductInstanceID": {
+                    "type": "string",
+                    "example": "PIID"
+                },
+                "AccountID": {
+                    "type": "string",
+                    "example": ""
+                },
+                "OwnerID": {
+                    "type": "string",
+                    "example": ""
+                },
+                "ClientID": {
+                    "type": "string",
+                    "example": ""
+                },
+                "ClientFacingProductName": {
+                    "type": "string",
+                    "example": "TN,ATS,Job,TD, etc"
+                },
+                "FieldNameChanged": {
+                    "type": "string",
+                    "example": ""
+                },
+                "CustomerFacingText": {
+                    "type": "string",
+                    "example": ""
+                },
+                "OldValue": {
+                    "type": "string",
+                    "example": ""
+                },
+                "NewValue": {
+                    "type": "string",
+                    "example": ""
+                },
+                "SystemEntityID": {
+                    "type": "string",
+                    "example": "JobDID, ResuemDID, ApplicationDID, etc."
+                },
+                "AccessType": {
+                    "type": "string",
+                    "example": "member search, email campaign, ATS Sync"
+                },
+                "ActionType": {
+                    "type": "string",
+                    "example": "Data Change, Login, Logout, File Change"
+                },
+                "TrustBoundaryClientIP": {
+                    "type": "string",
+                    "example": ""
+                },
+                "ContextBoundaryNetworkIP": {
+                    "type": "string",
+                    "example": ""
+                },
+                "RequestID": {
+                    "type": "string",
+                    "example": ""
+                },
+                "ChangeDateTime": {
+                    "type": "string",
+                    "example": ""
+                },
+                "SystemTimeStamp": {
+                    "type": "string",
+                    "example": ""
+                }
+            }
+        },
+        "APIResponseError": {
+            "type": "object",
+            "properties": {
+                "Error": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigLogResult": {
+            "type": "object",
+            "properties": {
+                "EndClientEntityID": {
+                    "type": "string"
+                },
+                "LogStatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigLogResponse": {
+            "type": "object",
+            "properties": {
+                "Errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/APIResponseError"
+                    }
+                },
+                "Results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConfigLogResult"
+                    }
+                }
+            }
+        }
+    }
+}
