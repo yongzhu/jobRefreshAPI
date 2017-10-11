@@ -6,9 +6,9 @@
         "title": "Micro Service: Client Config Log "
     },
     "host": "api.careerbuilder.com",
-    "basePath": "/corporate/ClientConfigLog",
+    "basePath": "/corporate/ClientConfigLogs",
     "schemes": [
-        "http"
+        "https"
     ],
     "paths": {
         "/logData": {
@@ -25,32 +25,11 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "X_PROXY_SECRET_TOKEN",
-                        "required": true,
-                        "type": "string",
-                        "default": ""
-                    },
-                    {
-                        "in": "header",
-                        "name": "AUTHORIZATION",
-                        "default": "",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "Content-Type",
-                        "default": "application/json",
-                        "required": true,
-                        "type": "string"
-                    },
+                "parameters": [                    
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "request JSON data to log",
+                        "description": "save log data",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/ConfigLogRequest"
@@ -95,10 +74,11 @@
                 },
                 "ProductInstanceID": {
                     "type": "string",
-                    "example": "PIID"
+                    "example": "cd9f8866-3be3-11e7-b6c8-12cdb5598af4"
                 },
                 "AccountID": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "AOB56H5W7PHCPN3PB16"
                 },
                 "OwnerID": {
                     "type": "string"
@@ -120,19 +100,21 @@
                 },
                 "FormatOfValue": {
                     "type": "string",
-                    "example": "TN,ATS,Job,TD, etc"
+                    "enum": ["JSON", "string"],
+                    "example": "JSON"
                 },
                 "SystemEntityID": {
                     "type": "string",
-                    "example": "JobDID, ResuemDID, ApplicationDID, etc."
+                    "example": "J3G14F62ZDMT4RYF6VH"
                 },
                 "AccessType": {
                     "type": "string",
-                    "example": "member search, email campaign, ATS Sync"
+                    "example": "member search"
                 },
                 "ActionType": {
                     "type": "string",
-                    "example": "Data Change, Login, Logout, File Change, Product Change"
+                    "enum": ["DataChange", "Login", "Logout", "FileChange", "ProductChange"],
+                    "example": "Data Change"
                 },
                 "TrustBoundaryClientIP": {
                     "type": "string"
@@ -160,10 +142,7 @@
         "ConfigLogResult": {
             "type": "object",
             "properties": {
-                "EndClientEntityID": {
-                    "type": "string"
-                },
-                "LogStatus": {
+                "Status": {
                     "type": "string"
                 }
             }
