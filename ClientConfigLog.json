@@ -25,7 +25,21 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [                    
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Content-Type",
+                        "default": "application/json",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "default": "bearer tb1yyxFCWx8N9UMGLdJOOriAQ4lH7Ossp5LJVBnq87ZqzC69CU-FCgKDjvhtIjI1LeN8",
+                        "required": true,
+                        "type": "string"
+                    },                                   
                     {
                         "in": "body",
                         "name": "body",
