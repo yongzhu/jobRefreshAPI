@@ -11,7 +11,7 @@
         "https"
     ],
     "paths": {
-        "/logData": {
+        "/log": {
             "post": {
                 "tags": [
                     "Save Client Config Log Data"
@@ -44,7 +44,7 @@
                         }
                     },
                     "400": {
-                        "description": "Bad Request: AccountID is required, OwnerID is required, ClientID is required, CustomerFacingText is required, FormatOfValue required, ActionType is required, ActionType should be one of Data Change, Login, Logout, File Change, Product Change"
+                        "description": "Bad Request: AccountID is required, OwnerID is required, ClientID is required, CustomerFacingText is required, FormatOfValue required, ActionType is required, ActionType should be one of Data Change, Login, Logout, File Change, Product Change, FormatOfValue should be JSON or string"
                     },
                     "404": {
                         "description": "Not Found"
