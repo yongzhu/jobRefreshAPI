@@ -6,12 +6,12 @@
         "title": "Micro Service: Client Config Log "
     },
     "host": "api.careerbuilder.com",
-    "basePath": "/corporate/ClientConfigLogs",
+    "basePath": "/corporate/AdminTools",
     "schemes": [
         "https"
     ],
     "paths": {
-        "/log": {
+        "/ClientConfigLogs": {
             "post": {
                 "tags": [
                     "Save Client Config Log Data"
@@ -101,16 +101,20 @@
                     "type": "string"
                 },
                 "FieldNameChanged": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Bullhorn.UserName"
                 },
                 "CustomerFacingText": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "User Name for Bullhorn changed from UserNameA to UserNameB"
                 },
                 "OldValue": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "UserNameA"
                 },
                 "NewValue": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "UserNameB"
                 },
                 "FormatOfValue": {
                     "type": "string",
@@ -131,10 +135,12 @@
                     "example": "Data Change"
                 },
                 "TrustBoundaryClientIP": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "203.116.5.14"
                 },
                 "ContextBoundaryNetworkIP": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "74.125.68.103"
                 },
                 "RequestID": {
                     "type": "string"
