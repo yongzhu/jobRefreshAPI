@@ -11,7 +11,7 @@
         "http"
     ],
     "paths": {
-        "/dataTrack": {
+        "/logData": {
             "post": {
                 "tags": [
                     "Save Client Config Log Data"
