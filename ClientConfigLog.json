@@ -139,7 +139,8 @@
                     "example": "74.125.68.103"
                 },
                 "request_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "K2oLxafpRVYiwpCAMX4IilQkxpXG1wuY"
                 },
                 "change_date_time": {
                     "type": "string",
