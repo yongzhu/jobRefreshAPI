@@ -51,14 +51,17 @@
                     }
                 ],
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "successful operation",
                         "schema": {
-                            "$ref": "#/definitions/ConfigLogResponse"
+                            "$ref": "#/definitions/ConfigLogResult"
                         }
                     },
                     "400": {
-                        "description": "Bad Request: account_id is required, owner_id is required, client_id is required, customer_facing_text is required, format_of_value required, action_type is required, action_type should be one of data_change, login, logout, file_change, product_change"
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/APIResponseError"
+                        }
                     },
                     "404": {
                         "description": "Not Found"
@@ -153,7 +156,8 @@
             "properties": {
                 "error": {
                     "type": "string",
-                    "example": ""
+                    "enum": ["account_id is required", "owner_id is required", "client_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change, login, logout, file_change, product_change", "unknown error"],
+                    "example": "account_id is required"
                 }
             }
         },
@@ -165,23 +169,6 @@
                     "example": "success"
                 }
             }
-        },
-        "ConfigLogResponse": {
-            "type": "object",
-            "properties": {
-                "errors": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/APIResponseError"
-                    }
-                },
-                "results": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/ConfigLogResult"
-                    }
-                }
-            }
-        }
+        }       
     }
 }
