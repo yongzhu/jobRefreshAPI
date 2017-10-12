@@ -140,7 +140,7 @@
                 },
                 "request_id": {
                     "type": "string",
-                    "example": "K2oLxafpRVYiwpCAMX4IilQkxpXG1wuY"
+                    "example": "6b077787-1e18-4f6b-a539-453c6e378ab2"
                 },
                 "change_date_time": {
                     "type": "string",
