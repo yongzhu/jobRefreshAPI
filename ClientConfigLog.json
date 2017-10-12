@@ -74,78 +74,78 @@
         "ConfigLogRequest": {
             "type": "object",
             "required": [
-                "AccountID",
-                "OwnerID",
-                "ClientID",
-                "CustomerFacingText",   
-                "FormatOfValue",
-                "ActionType"
+                "account_id",
+                "owner_id",
+                "client_id",
+                "customer_facing_text",   
+                "format_of_value",
+                "action_type"
             ],
             "properties": {
-                "EndClientEntityID": {
+                "end_client_entity_id": {
                     "type": "string",
                     "example": "demoUserEmail@test.com"
                 },
-                "ProductInstanceID": {
+                "product_instance_id": {
                     "type": "string",
                     "example": "cd9f8866-3be3-11e7-b6c8-12cdb5598af4"
                 },
-                "AccountID": {
+                "account_id": {
                     "type": "string",
                     "example": "AOB56H5W7PHCPN3PB16"
                 },
-                "OwnerID": {
+                "owner_id": {
                     "type": "string"
                 },
-                "ClientID": {
+                "client_id": {
                     "type": "string"
                 },
-                "FieldNameChanged": {
+                "field_name_changed": {
                     "type": "string",
                     "example": "Bullhorn.UserName"
                 },
-                "CustomerFacingText": {
+                "customer_facing_text": {
                     "type": "string",
                     "example": "User Name for Bullhorn changed from UserNameA to UserNameB"
                 },
-                "OldValue": {
+                "old_value": {
                     "type": "string",
                     "example": "UserNameA"
                 },
-                "NewValue": {
+                "new_value": {
                     "type": "string",
                     "example": "UserNameB"
                 },
-                "FormatOfValue": {
+                "format_of_value": {
                     "type": "string",
                     "enum": ["JSON", "string"],
                     "example": "JSON"
                 },
-                "SystemEntityID": {
+                "system_entity_id": {
                     "type": "string",
                     "example": "J3G14F62ZDMT4RYF6VH"
                 },
-                "AccessType": {
+                "access_type": {
                     "type": "string",
                     "example": "member search"
                 },
-                "ActionType": {
+                "action_type": {
                     "type": "string",
                     "enum": ["DataChange", "Login", "Logout", "FileChange", "ProductChange"],
                     "example": "Data Change"
                 },
-                "TrustBoundaryClientIP": {
+                "trust_boundary_client_ip": {
                     "type": "string",
                     "example": "203.116.5.14"
                 },
-                "ContextBoundaryNetworkIP": {
+                "context_boundary_network_ip": {
                     "type": "string",
                     "example": "74.125.68.103"
                 },
-                "RequestID": {
+                "request_id": {
                     "type": "string"
                 },
-                "ChangeDateTime": {
+                "change_date_time": {
                     "type": "string",
                     "format": "date-time"
                 }
@@ -154,7 +154,7 @@
         "APIResponseError": {
             "type": "object",
             "properties": {
-                "Error": {
+                "error": {
                     "type": "string"
                 }
             }
@@ -162,7 +162,7 @@
         "ConfigLogResult": {
             "type": "object",
             "properties": {
-                "Status": {
+                "status": {
                     "type": "string"
                 }
             }
@@ -170,13 +170,13 @@
         "ConfigLogResponse": {
             "type": "object",
             "properties": {
-                "Errors": {
+                "errors": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/APIResponseError"
                     }
                 },
-                "Results": {
+                "results": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ConfigLogResult"
