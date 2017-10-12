@@ -60,7 +60,7 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/APIResponseError"
+                            "$ref": "#/definitions/APIResponseErrors"
                         }
                     },
                     "404": {
@@ -157,12 +157,34 @@
                 }
             }
         },
-        "ConfigLogResult": {
+        "ConfigLogStatus": {
             "type": "object",
             "properties": {
                 "status": {
                     "type": "string",
                     "example": "success"
+                }
+            }
+        },
+        "ConfigLogResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "items": {
+                        "$ref": "#/definitions/ConfigLogStatus"
+                    }
+                }
+            }
+        },
+        "APIResponseErrors": {
+            "type": "object",
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/APIResponseError"
+                    }
                 }
             }
         }       
