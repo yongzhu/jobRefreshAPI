@@ -58,7 +58,7 @@
                         }
                     },
                     "400": {
-                        "description": "Bad Request: account_id is required, owner_id is required, client_id is required, customer_facing_text is required, format_of_value required, action_type is required, action_type should be one of DataChange, Login, Logout, FileChange, ProductChange, format_of_value should be JSON or string"
+                        "description": "Bad Request: account_id is required, owner_id is required, client_id is required, customer_facing_text is required, format_of_value required, action_type is required, action_type should be one of DataChange, Login, Logout, FileChange, ProductChange"
                     },
                     "404": {
                         "description": "Not Found"
