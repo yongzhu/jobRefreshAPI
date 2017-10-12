@@ -38,10 +38,7 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "successful operation",
-                        "schema": {
-                            "$ref": "#/definitions/ConfigLogResult"
-                        }
+                        "description": "Success"
                     },
                     "400": {
                         "description": "Bad Request",
@@ -130,12 +127,12 @@
             "properties": {               
                 "type": {
                     "type": "string",
-                    "enum": ["account_id is required", "owner_id is required", "client_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change, login, logout, file_change, product_change", "unknown error"],
-                    "example": "account_id is required"
+                    "example": "some data is missing"
                 },
                 "message":{
                     "type": "string",
-                    "example": "account id is required"
+                    "enum": ["account_id is required", "owner_id is required", "client_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change, login, logout, file_change, product_change", "unknown error"],
+                    "example": "account_id is required"
                 },
                 "code":{
                     "type": "string",
