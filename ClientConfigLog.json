@@ -11,7 +11,7 @@
         "https"
     ],
     "paths": {
-        "/ClientConfigLogs": {
+        "/eventlog": {
             "post": {
                 "tags": [
                     "Save Client Config Log Data"
@@ -77,8 +77,7 @@
                 "account_id",
                 "owner_id",
                 "client_id",
-                "customer_facing_text",   
-                "format_of_value",
+                "customer_facing_text", 
                 "action_type"
             ],
             "properties": {
@@ -95,10 +94,12 @@
                     "example": "AOB56H5W7PHCPN3PB16"
                 },
                 "owner_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "2445581102341"
                 },
                 "client_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "C93ef6dcd"
                 },
                 "field_name_changed": {
                     "type": "string",
@@ -115,11 +116,6 @@
                 "new_value": {
                     "type": "string",
                     "example": "UserNameB"
-                },
-                "format_of_value": {
-                    "type": "string",
-                    "enum": ["JSON", "string"],
-                    "example": "JSON"
                 },
                 "system_entity_id": {
                     "type": "string",
@@ -155,7 +151,8 @@
             "type": "object",
             "properties": {
                 "error": {
-                    "type": "string"
+                    "type": "string",
+                    "example": ""
                 }
             }
         },
@@ -163,7 +160,8 @@
             "type": "object",
             "properties": {
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "success"
                 }
             }
         },
