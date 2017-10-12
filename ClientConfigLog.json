@@ -171,8 +171,11 @@
             "properties": {
                 "data": {
                     "type": "object",
-                    "items": {
-                        "$ref": "#/definitions/ConfigLogStatus"
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "example": "success"
+                        }
                     }
                 }
             }
