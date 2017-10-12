@@ -128,7 +128,7 @@
                 "action_type": {
                     "type": "string",
                     "enum": ["data_change", "login", "logout", "file_change", "product_change"],
-                    "example": "Data Change"
+                    "example": "data_change"
                 },
                 "trust_boundary_client_ip": {
                     "type": "string",
