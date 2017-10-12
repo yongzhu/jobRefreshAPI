@@ -25,21 +25,7 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "Content-Type",
-                        "default": "application/json",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "default": "bearer tb1yyxFCWx8N9UMGLdJOOriAQ4lH7Ossp5LJVBnq87ZqzC69CU-FCgKDjvhtIjI1LeN8",
-                        "required": true,
-                        "type": "string"
-                    },                                   
+                "parameters": [                                            
                     {
                         "in": "body",
                         "name": "body",
@@ -95,14 +81,6 @@
                 "account_id": {
                     "type": "string",
                     "example": "AOB56H5W7PHCPN3PB16"
-                },
-                "owner_id": {
-                    "type": "string",
-                    "example": "2445581102341"
-                },
-                "client_id": {
-                    "type": "string",
-                    "example": "C93ef6dcd"
                 },
                 "field_name_changed": {
                     "type": "string",
