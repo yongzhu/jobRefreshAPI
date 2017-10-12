@@ -38,7 +38,10 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Success"
+                        "description": "Success (add Location and ETag within response header)",
+                        "schema": {
+                            "$ref": "#/definitions/APICreateResponse"
+                        }
                     },
                     "400": {
                         "description": "Bad Request",
@@ -152,6 +155,15 @@
                         }
                     }
                 }
+            }
+        },
+        "APICreateResponse": {
+            "type": "object",
+            "properties": {               
+                "status": {
+                    "type": "string",
+                    "example": "create new log successfully"
+                }                    
             }
         },
         "APIResponseErrors": {
