@@ -14,7 +14,7 @@
         "/ClientConfigLogs": {
             "post": {
                 "tags": [
-                    "Save Client Config Log Data"
+                    "Create Client Config Log Data"
                 ],
                 "summary": " track config data change and related details",
                 "description": "",
@@ -43,7 +43,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "save log data",
+                        "description": "create log data",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/ConfigLogRequest"
@@ -58,7 +58,7 @@
                         }
                     },
                     "400": {
-                        "description": "Bad Request: account_id is required, owner_id is required, client_id is required, customer_facing_text is required, format_of_value required, action_type is required, action_type should be one of DataChange, Login, Logout, FileChange, ProductChange"
+                        "description": "Bad Request: account_id is required, owner_id is required, client_id is required, customer_facing_text is required, format_of_value required, action_type is required, action_type should be one of data_change, login, logout, file_change, product_change"
                     },
                     "404": {
                         "description": "Not Found"
@@ -127,7 +127,7 @@
                 },
                 "action_type": {
                     "type": "string",
-                    "enum": ["DataChange", "Login", "Logout", "FileChange", "ProductChange"],
+                    "enum": ["data_change", "login", "logout", "file_change", "product_change"],
                     "example": "Data Change"
                 },
                 "trust_boundary_client_ip": {
