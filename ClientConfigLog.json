@@ -138,7 +138,7 @@
             "properties": {               
                 "type": {
                     "type": "string",
-                    "example": "Inputmissing"
+                    "example": "input_missing"
                 },
                 "message":{
                     "type": "string",
