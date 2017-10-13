@@ -38,7 +38,17 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Success (add Location and ETag within response header)",
+                        "description": "Success",
+                        "headers":{
+                            "Location": {
+                                "type": "string",
+                                "description": "gives the URL of where you can find the newly created thing."
+                            },
+                            "ETag": {
+                                "type": "string",
+                                "description": "be different when a resource changes."
+                            }
+                        },
                         "schema": {
                             "$ref": "#/definitions/APICreateResponse"
                         }
@@ -64,8 +74,6 @@
             "type": "object",
             "required": [
                 "account_id",
-                "owner_id",
-                "client_id",
                 "customer_facing_text", 
                 "action_type"
             ],
@@ -134,7 +142,7 @@
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["account_id is required", "owner_id is required", "client_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change, login, logout, file_change, product_change", "unknown error"],
+                    "enum": ["account_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change, login, logout, file_change, product_change", "unknown error"],
                     "example": "account_id is required"
                 },
                 "code":{
