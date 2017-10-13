@@ -168,10 +168,15 @@
         "APICreateResponse": {
             "type": "object",
             "properties": {               
-                "status": {
-                    "type": "string",
-                    "example": "success"
-                }                    
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "example": "success"
+                        }
+                    }
+                }                  
             }
         },
         "APIResponseErrors": {
