@@ -143,13 +143,13 @@
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["account_id is required", "customer_facing_text is required", "format_of_value required", "action_type is required", "action_type should be one of data_change login logout file_change product_change", "unknown error"],
+                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type should be one of data_change login logout file_change product_change", "unknown error"],
                     "example": "account_id is required"
                 },
                 "code":{
                     "type": "string",
                     "example": "20201",
-                    "enum": ["20201", "20202","20203","20204","20205","50201"]
+                    "enum": ["20201", "20202", "20203", "20204", "50201"]
                 }
             }
         },
