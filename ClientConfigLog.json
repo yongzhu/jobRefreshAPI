@@ -139,7 +139,7 @@
                 "type": {
                     "type": "string",
                     "example": "input_missing",
-                    "enum": ["input_missing", "beyond_option", "unknown_error"]
+                    "enum": ["input_missing", "invalid_option", "unknown_error"]
                 },
                 "message":{
                     "type": "string",
