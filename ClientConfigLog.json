@@ -38,17 +38,7 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Success",
-                        "headers":{
-                            "Location": {
-                                "type": "string",
-                                "description": "gives the URL of where you can find the newly created thing."
-                            },
-                            "ETag": {
-                                "type": "string",
-                                "description": "be different when a resource changes."
-                            }
-                        },
+                        "description": "Success",                        
                         "schema": {
                             "$ref": "#/definitions/APICreateResponse"
                         }
