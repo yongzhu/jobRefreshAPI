@@ -49,6 +49,9 @@
                             "$ref": "#/definitions/APIResponseErrors"
                         }
                     },
+                    "401": {
+                        "description": "Unauthorized access. Please log in first."
+                    },
                     "404": {
                         "description": "Not Found"
                     },
@@ -133,7 +136,7 @@
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type should be one of data_change login logout file_change product_change", "unknown error"],
+                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type is invalid", "unknown error"],
                     "example": "account_id is required"
                 },
                 "code":{
@@ -142,21 +145,7 @@
                     "enum": ["20201", "20202", "20203", "20204", "50201"]
                 }
             }
-        },
-        "ConfigLogResult": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object",
-                    "properties": {
-                        "status": {
-                            "type": "string",
-                            "example": "success"
-                        }
-                    }
-                }
-            }
-        },
+        },        
         "APICreateResponse": {
             "type": "object",
             "properties": {               
