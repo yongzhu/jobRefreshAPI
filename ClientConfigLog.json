@@ -50,7 +50,7 @@
                         }
                     },
                     "401": {
-                        "description": "Unauthorized access.",
+                        "description": "Unauthorized access",
                         "schema": {
                             "$ref": "#/definitions/APIResponseUnAuthErrors"
                         }
@@ -159,8 +159,8 @@
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["The request is made from a unauthorized source.", "No valid authorization header found in the request.", "This is a user-centric API but no user is found in the request.", "User is not under a Careerbuilder Account."],
-                    "example": "The request is made from a unauthorized source."
+                    "enum": ["The request is made from a unauthorized source", "No valid authorization header found in the request", "This is a user-centric API but no user is found in the request", "User is not under a Careerbuilder Account"],
+                    "example": "The request is made from a unauthorized source"
                 }
             }
         },        
