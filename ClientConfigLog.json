@@ -50,7 +50,10 @@
                         }
                     },
                     "401": {
-                        "description": "Unauthorized access. Please log in first."
+                        "description": "Unauthorized access.",
+                        "schema": {
+                            "$ref": "#/definitions/APIResponseUnAuthErrors"
+                        }
                     },
                     "404": {
                         "description": "Not Found"
@@ -145,6 +148,21 @@
                     "enum": ["20201", "20202", "20203", "20204", "50201"]
                 }
             }
+        }, 
+        "APIResponseUnAuthError": {
+            "type": "object",
+            "properties": {               
+                "type": {
+                    "type": "string",
+                    "example": "UnauthorizedSourceError",
+                    "enum": ["UnauthorizedSourceError", "NoValidAuthorizationHeaderError", "UserNotFoundError", "AccountNotFoundError"]
+                },
+                "message":{
+                    "type": "string",
+                    "enum": ["The request is made from a unauthorized source.", "No valid authorization header found in the request.", "This is a user-centric API but no user is found in the request.", "User is not under a Careerbuilder Account."],
+                    "example": "The request is made from a unauthorized source."
+                }
+            }
         },        
         "APICreateResponse": {
             "type": "object",
@@ -167,6 +185,17 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/APIResponseError"
+                    }
+                }
+            }
+        } ,
+        "APIResponseUnAuthErrors": {
+            "type": "object",
+            "properties": {
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/APIResponseUnAuthError"
                     }
                 }
             }
