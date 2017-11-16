@@ -159,11 +159,11 @@
                 "type": {
                     "type": "string",
                     "example": "UnauthorizedSourceError",
-                    "enum": ["UnauthorizedSourceError", "NoValidAuthorizationHeaderError", "UserNotFoundError", "AccountNotFoundError"]
+                    "enum": ["UnauthorizedSourceError", "NoValidAuthorizationHeaderError"]
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["The request is made from a unauthorized source", "No valid authorization header found in the request", "This is a user-centric API but no user is found in the request", "User is not under a Careerbuilder Account"],
+                    "enum": ["The request is made from a unauthorized source", "No valid authorization header found in the request"],
                     "example": "The request is made from a unauthorized source"
                 }
             }
