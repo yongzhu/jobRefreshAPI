@@ -123,10 +123,6 @@
                     "type": "string",
                     "example": "74.125.68.103"
                 },
-                "request_id": {
-                    "type": "string",
-                    "example": "request_id_Demo"
-                },
                 "create_date_time": {
                     "type": "string",
                     "format": "date-time"
@@ -139,17 +135,17 @@
                 "type": {
                     "type": "string",
                     "example": "input_missing",
-                    "enum": ["input_missing", "invalid_option", "unknown_error"]
+                    "enum": ["input_missing", "invalid_option", "input_overlength","unknown_error"]
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type is invalid", "unknown error"],
+                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type is invalid", "input string exceeds the allowable length","unknown error"],
                     "example": "account_id is required"
                 },
                 "code":{
                     "type": "string",
                     "example": "20201",
-                    "enum": ["20201", "20202", "20203", "20204", "50201"]
+                    "enum": ["20201(account_id is required)", "20202(customer_facing_text is required)", "20203(action_type is required)", "20204(action_type is invalid)","20205(input string exceeds the allowable length)", "50201(unknown error)"]
                 }
             }
         }, 
