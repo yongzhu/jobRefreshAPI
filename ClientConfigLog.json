@@ -139,13 +139,13 @@
                 },
                 "message":{
                     "type": "string",
-                    "enum": ["account_id is required", "customer_facing_text is required", "action_type is required", "action_type is invalid", "input string exceeds the allowable length","unknown error"],
+                    "enum": ["account_id is required", "action_type is invalid", "account_id exceeds the allowable length","unknown error"],
                     "example": "account_id is required"
                 },
                 "code":{
                     "type": "string",
                     "example": "20201",
-                    "enum": ["20201(account_id is required)", "20202(customer_facing_text is required)", "20203(action_type is required)", "20204(action_type is invalid)","20205(input string exceeds the allowable length)", "50201(unknown error)"]
+                    "enum": ["20201(account_id is required)", "20202(action_type is invalid)","20203(account_id exceeds the allowable length)", "20204(unknown error)"]
                 }
             }
         }, 
