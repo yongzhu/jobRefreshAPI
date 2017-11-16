@@ -74,6 +74,19 @@
                 "action_type"
             ],
             "properties": {
+                "account_id": {
+                    "type": "string",
+                    "example": "AOB56H5W7PHCPN3PB16"
+                },
+                "customer_facing_text": {
+                    "type": "string",
+                    "example": "User Name for Bullhorn changed from UserNameA to UserNameB"
+                },
+                "action_type": {
+                    "type": "string",
+                    "enum": ["data_change", "login", "logout", "file_change", "product_change"],
+                    "example": "data_change"
+                },
                 "end_client_entity_id": {
                     "type": "string",
                     "example": "demoUserEmail@test.com"
@@ -81,19 +94,11 @@
                 "product_instance_id": {
                     "type": "string",
                     "example": "cd9f8866-3be3-11e7-b6c8-12cdb5598af4"
-                },
-                "account_id": {
-                    "type": "string",
-                    "example": "AOB56H5W7PHCPN3PB16"
-                },
+                },                
                 "field_name_changed": {
                     "type": "string",
                     "example": "Bullhorn.UserName"
-                },
-                "customer_facing_text": {
-                    "type": "string",
-                    "example": "User Name for Bullhorn changed from UserNameA to UserNameB"
-                },
+                },                
                 "old_value": {
                     "type": "string",
                     "example": "UserNameA"
@@ -109,12 +114,7 @@
                 "access_type": {
                     "type": "string",
                     "example": "member search"
-                },
-                "action_type": {
-                    "type": "string",
-                    "enum": ["data_change", "login", "logout", "file_change", "product_change"],
-                    "example": "data_change"
-                },
+                },               
                 "trust_boundary_client_ip": {
                     "type": "string",
                     "example": "203.116.5.14"
@@ -123,7 +123,11 @@
                     "type": "string",
                     "example": "74.125.68.103"
                 },
-                "change_date_time": {
+                "request_id": {
+                    "type": "string",
+                    "example": "request_id_Demo"
+                },
+                "create_date_time": {
                     "type": "string",
                     "format": "date-time"
                 }
