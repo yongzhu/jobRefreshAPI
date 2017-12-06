@@ -17,7 +17,7 @@
     "http"
   ],
   "paths": {
-    "/Get": {
+    "/get": {
       "get": {
         "tags": [
           "Media API"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "/Get/{mediaDID}": {
+    "/get/{mediaDID}": {
       "get": {
         "tags": [
           "Media API"
         ],
         "summary": "Get media data by accountDID and resumeDID",
         "description": "",
-        "operationId": "Get one special Media",
+        "operationId": "GetOnelMedia",
         "parameters": [
           {
             "in": "header",
@@ -109,14 +109,14 @@
         }
       }
     },    
-    "/Refresh": {
+    "/post": {
       "post": {
         "tags": [
-          "Job Refresh"
+          "Media API"
         ],
-        "summary": "refresh one job by jobdDID and accountDID",
+        "summary": "add new media",
         "description": "",
-        "operationId": "RefreshJob",
+        "operationId": "addNewMedia",
         "consumes": [
           "application/json"
         ],
@@ -148,10 +148,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "jobDID that job will be refreshed",
+            "description": "new media detail",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/refreshjobDIDRequest"
+              "$ref": "#/definitions/mediaDetailRequest"
             }
           }
         ],
@@ -176,17 +176,25 @@
     }
   },
   "definitions": {
-    "refreshjobDIDRequest": {
+    "mediaDetailRequest": {
       "type": "object",
       "required": [
         "jobdid"
       ],
       "properties": {
-        "jobdid": {
-          "type": "string",
-          "example": "jj57sp752fpphhcwhy9"
+        "MediaGroup": {
+          "type": "string"
+        },
+        "MediaSubGroup": {
+          "type": "string"
+        },
+        "MediaName": {
+          "type": "string"
+        },
+        "fileBytes": {
+          "type": "string"
         }
-      }
+      }      
     },
     "GetMediasAPIResult": {
       "type": "object",
@@ -200,10 +208,10 @@
         "MediaURL": {
           "type": "string"
         },
-        "Group": {
+        "MediaGroup": {
           "type": "string"
         },
-        "SubGroup": {
+        "MediaSubGroup": {
           "type": "string"
         },
         "MediaTotalUsage": {
