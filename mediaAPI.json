@@ -1,0 +1,234 @@
+{
+"swagger": "2.0",
+  "info": {
+    "description": "Media API description",
+    "version": "1.0.0",
+    "title": "Media Refresh API"
+  },
+  "host": "api.careerbuilder.com",
+  "basePath": "/corporate/jobposterapi/media",
+  "tags": [
+    {
+      "name": "Media API",
+      "description": "Media API"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Get": {
+      "get": {
+        "tags": [
+          "Job Refresh"
+        ],
+        "summary": "Get all medias by accountDID",
+        "description": "",
+        "operationId": "GetAllMedias",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string" 
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GetAllMediasAPIResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: No Refresh Credit, Fail to get refresh credit count"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/Refresh": {
+      "post": {
+        "tags": [
+          "Job Refresh"
+        ],
+        "summary": "refresh one job by jobdDID and accountDID",
+        "description": "",
+        "operationId": "RefreshJob",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "jobDID that job will be refreshed",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/refreshjobDIDRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RefreshJobAPIResults"
+            }
+          },
+          "400": {
+            "description": "Bad Request: JobDID is required, Job isn't active, Job's accountDID isn't same as request AccountDID, Job not found, Insufficient refresh credit, Fail to refresh job"
+         },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "refreshjobDIDRequest": {
+      "type": "object",
+      "required": [
+        "jobdid"
+      ],
+      "properties": {
+        "jobdid": {
+          "type": "string",
+          "example": "jj57sp752fpphhcwhy9"
+        }
+      }
+    },
+    "GetMediasAPIResult": {
+      "type": "object",
+      "properties": {
+        "MediaDID": {
+          "type": "string"
+        },
+        "MediaName": {
+          "type": "string"
+        },
+        "MediaURL": {
+          "type": "string"
+        },
+        "Group": {
+          "type": "string"
+        },
+        "SubGroup": {
+          "type": "string"
+        },
+        "MediaTotalUsage": {
+          "type": "integer"
+        },
+        "MediaWidth": {
+          "type": "integer"
+        },
+        "MediaHeight": {
+          "type": "integer"
+        },
+        "MediaFileSize": {
+          "type": "integer"
+        },
+        "MediaType": {
+          "type": "string"
+        }
+      }
+    },
+    "APIResponseError": {
+      "type": "object",
+      "properties": {
+        "Error": {
+          "type": "string"
+        }
+      }
+    },
+    "GetMediasAPIResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
+        },
+        "Results": {
+          "type": "array",
+          "items": {
+          "$ref": "#/definitions/GetMediasAPIResult"
+          }
+        }
+      }
+    },
+    "RefreshJobResult": {
+      "type": "object",
+      "properties": {
+        "JobDID": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        }
+      }
+    },
+    "RefreshJobAPIResults": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
+        },
+        "Results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RefreshJobResult"
+          }
+        }
+      }
+    }
+  }
+}
