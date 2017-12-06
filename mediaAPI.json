@@ -159,11 +159,11 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/RefreshJobAPIResults"
+              "$ref": "#/definitions/PostNewMediaResult"
             }
           },
           "400": {
-            "description": "Bad Request: JobDID is required, Job isn't active, Job's accountDID isn't same as request AccountDID, Job not found, Insufficient refresh credit, Fail to refresh job"
+            "description": "Bad Request: SubGroupDID is required, MediaName is required"
          },
           "404": {
             "description": "Not Found"
@@ -231,6 +231,25 @@
         }
       }
     },
+    "PostNewMediaResult":{
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APIResponseError"
+          }
+        },
+        "Result": {
+          "type": "object",
+          "properties": {
+            "MediaDID": {
+              "type": "string"
+            }
+          }
+        }
+      }      
+    },
     "APIResponseError": {
       "type": "object",
       "properties": {
@@ -270,6 +289,8 @@
         }
       }
     },
+
+
     "RefreshJobResult": {
       "type": "object",
       "properties": {
