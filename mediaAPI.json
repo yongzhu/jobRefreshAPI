@@ -185,7 +185,7 @@
         }
       }
     },
-    "GetMediasAPIResults": {
+    "GetAllMediasAPIResults": {
       "type": "object",
       "properties": {
         "Errors": {
