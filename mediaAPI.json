@@ -85,15 +85,6 @@
             "default": "",
             "required": true,
             "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "load media by mediaDID",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/loadMediaDIDRequest"
-            }
           }
         ],
         "produces": [
@@ -197,18 +188,6 @@
         }
       }
     },
-    "loadMediaDIDRequest": {
-      "type": "object",
-      "required": [
-        "mediaDID"
-      ],
-      "properties": {
-        "mediaDID": {
-          "type": "string",
-          "example": "XXXXXXX"
-        }
-      }
-    },
     "GetMediasAPIResult": {
       "type": "object",
       "properties": {
@@ -278,11 +257,8 @@
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Results": {
-          "type": "object",
-          "items": {
+        "Result": {
           "$ref": "#/definitions/GetMediasAPIResult"
-          }
         }
       }
     },
