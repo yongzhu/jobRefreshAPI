@@ -17,99 +17,7 @@
     "http"
   ],
   "paths": {
-    "/get": {
-      "get": {
-        "tags": [
-          "media API"
-        ],
-        "summary": "Get all medias by accountDID",
-        "description": "",
-        "operationId": "GetAllMedias",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string" 
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/getAllMediasResponses"
-            }
-          },
-          "400": {
-            "description": "Bad Request: Fail to get media data"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/get/{mediaDID}": {
-      "get": {
-        "tags": [
-          "media API"
-        ],
-        "summary": "Get media by accountDID and mediaDID",
-        "description": "",
-        "operationId": "GetOneMedia",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string" 
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/getOneMediaResponse"
-            }
-          },
-          "400": {
-            "description": "Bad Request: Fail to get media data"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/post": {
+    "/media": {
       "post": {
         "tags": [
           "media API"
@@ -174,7 +82,104 @@
         }
       }
     },
-    "/put": {
+    "/media/getall": {
+      "get": {
+        "tags": [
+          "media API"
+        ],
+        "summary": "Get all medias by accountDID",
+        "description": "",
+        "operationId": "GetAllMedias",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string" 
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/getAllMediasResponses"
+            }
+          },
+          "400": {
+            "description": "Bad Request: Fail to get media data"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },   
+    "/media/{mediaDID}": {
+      "get": {
+        "tags": [
+          "media API"
+        ],
+        "summary": "Get media by accountDID and mediaDID",
+        "description": "",
+        "operationId": "GetOneMedia",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string" 
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "mediaDID", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/getOneMediaResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request: Fail to get media data"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
       "put": {
         "tags": [
           "media API"
@@ -211,6 +216,13 @@
             "type": "string"
           },
           {
+            "in": "path",
+            "name": "mediaDID", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "update media detail",
@@ -237,21 +249,65 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "media API"
+        ],
+        "summary": "delete media by accountDID and mediaDID",
+        "description": "",
+        "operationId": "deleteOneMedia",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string" 
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "mediaDID", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request: Fail to get media data"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
-
-
   },
   "definitions": {
     "mediaUpdateRequest": {
       "type": "object",
       "required": [
-        "mediaDID"
+        "mediaGroup",
+        "mediaSubGroup"
       ],
-      "properties": {
-        "mediaDID": {
-          "type": "string"
-        },
+      "properties": {        
         "mediaGroup": {
           "type": "string"
         },
@@ -261,7 +317,13 @@
         "mediaName": {
           "type": "string"
         },
+        "mediaType": {
+          "type": "string"
+        },
         "fileBytes": {
+          "type": "string"
+        },
+        "externalURL": {
           "type": "string"
         }
       }      
@@ -283,7 +345,13 @@
         "mediaName": {
           "type": "string"
         },
+         "mediaType": {
+          "type": "string"
+        },
         "fileBytes": {
+          "type": "string"
+        },
+        "externalURL": {
           "type": "string"
         }
       }      
@@ -294,20 +362,23 @@
         "mediaDID": {
           "type": "string"
         },
-        "mediaName": {
-          "type": "string"
-        },
-        "mediaURL": {
-          "type": "string"
-        },
         "mediaGroup": {
           "type": "string"
         },
         "mediaSubGroup": {
           "type": "string"
         },
-        "mediaTotalUsage": {
-          "type": "integer"
+        "mediaName": {
+          "type": "string"
+        },
+        "mediaPath": {
+          "type": "string"
+        },
+        "mediaContent": {
+          "type": "string"
+        },
+        "externalURL": {
+          "type": "string"
         },
         "mediaWidth": {
           "type": "integer"
@@ -320,6 +391,9 @@
         },
         "mediaType": {
           "type": "string"
+        },        
+        "mediaTotalUsage": {
+          "type": "integer"
         }
       }
     },
