@@ -1,16 +1,16 @@
 {
 "swagger": "2.0",
   "info": {
-    "description": "Media API description",
+    "description": "media API description",
     "version": "1.0.0",
-    "title": "Media Refresh API"
+    "title": "media API"
   },
   "host": "api.careerbuilder.com",
   "basePath": "/corporate/jobposterapi/media",
   "tags": [
     {
-      "name": "Media API",
-      "description": "Media API"
+      "name": "media API",
+      "description": "media API"
     }
   ],
   "schemes": [
@@ -20,7 +20,7 @@
     "/get": {
       "get": {
         "tags": [
-          "Media API"
+          "media API"
         ],
         "summary": "Get all medias by accountDID",
         "description": "",
@@ -48,7 +48,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/GetAllMediasAPIResults"
+              "$ref": "#/definitions/GetAllMediasResponses"
             }
           },
           "400": {
@@ -66,11 +66,11 @@
     "/get/{mediaDID}": {
       "get": {
         "tags": [
-          "Media API"
+          "media API"
         ],
         "summary": "Get media data by accountDID and resumeDID",
         "description": "",
-        "operationId": "GetOnelMedia",
+        "operationId": "GetOneMedia",
         "parameters": [
           {
             "in": "header",
@@ -94,7 +94,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/GetOneMediaAPIResult"
+              "$ref": "#/definitions/GetOneMediaResponse"
             }
           },
           "400": {
@@ -108,15 +108,15 @@
           }
         }
       }
-    },    
+    },
     "/post": {
       "post": {
         "tags": [
-          "Media API"
+          "media API"
         ],
         "summary": "add new media",
         "description": "",
-        "operationId": "addNewMedia",
+        "operationId": "postNewMedia",
         "consumes": [
           "application/json"
         ],
@@ -148,10 +148,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "new media detail",
+            "description": "update media detail",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/mediaDetailRequest"
+              "$ref": "#/definitions/mediaPostRequest"
             }
           }
         ],
@@ -159,11 +159,76 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/PostNewMediaResult"
+              "$ref": "#/definitions/mediaPostResponse"
             }
           },
           "400": {
-            "description": "Bad Request: SubGroupDID is required, MediaName is required"
+            "description": "Bad Request: SubGroupDID is required, mediaName is required"
+         },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/put": {
+      "put": {
+        "tags": [
+          "media API"
+        ],
+        "summary": "update media",
+        "description": "",
+        "operationId": "updateMedia",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X_PROXY_SECRET_TOKEN",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "AUTHORIZATION",
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "update media detail",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/mediaUpdateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MediaPostResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request: mediaDID is required, SubGroupDID is required, mediaName is required"
          },
           "404": {
             "description": "Not Found"
@@ -174,21 +239,26 @@
         }
       }
     }
+
+
   },
   "definitions": {
-    "mediaDetailRequest": {
+    "mediaUpdateRequest": {
       "type": "object",
       "required": [
-        "jobdid"
+        "mediaDID"
       ],
       "properties": {
-        "MediaGroup": {
+        "mediaDID": {
           "type": "string"
         },
-        "MediaSubGroup": {
+        "mediaGroup": {
           "type": "string"
         },
-        "MediaName": {
+        "mediaSubGroup": {
+          "type": "string"
+        },
+        "mediaName": {
           "type": "string"
         },
         "fileBytes": {
@@ -196,42 +266,64 @@
         }
       }      
     },
-    "GetMediasAPIResult": {
+    "mediaPostRequest": {
+      "type": "object",
+      "required": [
+        "mediaGroup",
+        "mediaSubGroup",
+        "mediaName"
+      ],
+      "properties": {
+        "mediaGroup": {
+          "type": "string"
+        },
+        "mediaSubGroup": {
+          "type": "string"
+        },
+        "mediaName": {
+          "type": "string"
+        },
+        "fileBytes": {
+          "type": "string"
+        }
+      }      
+    },
+    "GetMediaResponse": {
       "type": "object",
       "properties": {
-        "MediaDID": {
+        "mediaDID": {
           "type": "string"
         },
-        "MediaName": {
+        "mediaName": {
           "type": "string"
         },
-        "MediaURL": {
+        "mediaURL": {
           "type": "string"
         },
-        "MediaGroup": {
+        "mediaGroup": {
           "type": "string"
         },
-        "MediaSubGroup": {
+        "mediaSubGroup": {
           "type": "string"
         },
-        "MediaTotalUsage": {
+        "mediaTotalUsage": {
           "type": "integer"
         },
-        "MediaWidth": {
+        "mediaWidth": {
           "type": "integer"
         },
-        "MediaHeight": {
+        "mediaHeight": {
           "type": "integer"
         },
-        "MediaFileSize": {
+        "mediaFileSize": {
           "type": "integer"
         },
-        "MediaType": {
+        "mediaType": {
           "type": "string"
         }
       }
     },
-    "PostNewMediaResult":{
+    "mediaPostResponse":{
       "type": "object",
       "properties": {
         "Errors": {
@@ -240,10 +332,10 @@
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Result": {
+        "Response": {
           "type": "object",
           "properties": {
-            "MediaDID": {
+            "mediaDID": {
               "type": "string"
             }
           }
@@ -258,7 +350,7 @@
         }
       }
     },
-    "GetAllMediasAPIResults": {
+    "GetAllMediasResponses": {
       "type": "object",
       "properties": {
         "Errors": {
@@ -267,15 +359,15 @@
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Results": {
+        "Responses": {
           "type": "array",
           "items": {
-          "$ref": "#/definitions/GetMediasAPIResult"
+          "$ref": "#/definitions/GetmediaResponse"
           }
         }
       }
     },
-    "GetOneMediaAPIResult": {
+    "GetOneMediaResponse": {
       "type": "object",
       "properties": {
         "Errors": {
@@ -284,38 +376,8 @@
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Result": {
-          "$ref": "#/definitions/GetMediasAPIResult"
-        }
-      }
-    },
-
-
-    "RefreshJobResult": {
-      "type": "object",
-      "properties": {
-        "JobDID": {
-          "type": "string"
-        },
-        "Status": {
-          "type": "string"
-        }
-      }
-    },
-    "RefreshJobAPIResults": {
-      "type": "object",
-      "properties": {
-        "Errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/APIResponseError"
-          }
-        },
-        "Results": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RefreshJobResult"
-          }
+        "Response": {
+          "$ref": "#/definitions/GetMediaResponse"
         }
       }
     }
