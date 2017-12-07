@@ -1,7 +1,7 @@
 {
 "swagger": "2.0",
   "info": {
-    "description": "media API description",
+    "description": "for all following APIs, it should add 2 parameters at API request header before calling API: X_PROXY_SECRET_TOKEN and AUTHORIZATION, all APIs retrieve current accountDID and UserDID from AUTHORIZATION",
     "version": "1.0.0",
     "title": "media API"
   },
@@ -31,21 +31,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION",
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
+        "parameters": [         
           {
             "in": "header",
             "name": "Content-Type",
@@ -87,23 +73,25 @@
         "tags": [
           "media API"
         ],
-        "summary": "Get all medias by accountDID",
+        "summary": "Get all medias",
         "description": "",
         "operationId": "GetAllMedias",
         "parameters": [
           {
             "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string" 
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION", 
-            "default": "",
+            "name": "Content-Type",
+            "default": "application/json",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "criteria for loading media",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/mediaLoadCritRequest"
+            }
           }
         ],
         "produces": [
@@ -133,24 +121,10 @@
         "tags": [
           "media API"
         ],
-        "summary": "Get media by accountDID and mediaDID",
+        "summary": "Get media by mediaDID",
         "description": "",
-        "operationId": "GetOneMedia",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string" 
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
+        "operationId": "GetMedia",
+        "parameters": [          
           {
             "in": "path",
             "name": "mediaDID", 
@@ -184,7 +158,7 @@
         "tags": [
           "media API"
         ],
-        "summary": "update media",
+        "summary": "update media by mediaDID",
         "description": "",
         "operationId": "updateMedia",
         "consumes": [
@@ -193,21 +167,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION",
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
+        "parameters": [          
           {
             "in": "header",
             "name": "Content-Type",
@@ -236,7 +196,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/mediaPostResponse"
+              "$ref": "#/definitions/getOneMediaResponse"
             }
           },
           "400": {
@@ -254,24 +214,10 @@
         "tags": [
           "media API"
         ],
-        "summary": "delete media by accountDID and mediaDID",
+        "summary": "delete media by mediaDID",
         "description": "",
-        "operationId": "deleteOneMedia",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "X_PROXY_SECRET_TOKEN",
-            "default": "",
-            "required": true,
-            "type": "string" 
-          },
-          {
-            "in": "header",
-            "name": "AUTHORIZATION", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
+        "operationId": "deleteMedia",
+        "parameters": [          
           {
             "in": "path",
             "name": "mediaDID", 
@@ -298,9 +244,102 @@
           }
         }
       }
+    },
+    "/media/share/{mediaDID}": {
+      "post": {
+        "tags": [
+          "media API"
+        ],
+        "summary": "share media",
+        "description": "",
+        "operationId": "shareMedia",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [          
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "mediaDID", 
+            "default": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "target media for sharing",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/mediaShareRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request: targetMediaGroup is required, targetMediaSubGroup is required"
+         },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "definitions": {
+    "mediaShareRequest":{
+      "type": "array",
+      "items": {
+        "type": "object",    
+        "required": [
+          "targetMediaGroup",
+          "targetMediaSubGroup"
+        ],  
+        "properties": {
+          "targetMediaGroup": {
+            "type": "string"
+          },
+          "targetMediaSubGroup": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mediaLoadCritRequest":{
+      "type": "object",      
+      "properties": {
+        "mediaGroup": {
+          "type": "string"
+        },
+        "mediaSubGroup": {
+          "type": "string"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "pageSize": {
+          "type": "number"
+        },
+        "sortBy": {
+          "type": "string"
+        }      
+      } 
+    },
     "mediaUpdateRequest": {
       "type": "object",
       "required": [
@@ -432,6 +471,18 @@
           "items": {
             "$ref": "#/definitions/APIResponseError"
           }
+        },
+        "mediaGroup": {
+          "type": "string"
+        },
+        "mediaSubGroup": {
+          "type": "string"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "TotalPages": {
+          "type": "number"
         },
         "Responses": {
           "type": "array",
