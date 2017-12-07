@@ -68,7 +68,7 @@
         "tags": [
           "media API"
         ],
-        "summary": "Get media data by accountDID and resumeDID",
+        "summary": "Get media by accountDID and mediaDID",
         "description": "",
         "operationId": "GetOneMedia",
         "parameters": [
