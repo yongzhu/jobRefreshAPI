@@ -48,7 +48,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/GetAllMediasResponses"
+              "$ref": "#/definitions/getAllMediasResponses"
             }
           },
           "400": {
@@ -94,7 +94,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/GetOneMediaResponse"
+              "$ref": "#/definitions/getOneMediaResponse"
             }
           },
           "400": {
@@ -224,7 +224,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/MediaPostResponse"
+              "$ref": "#/definitions/mediaPostResponse"
             }
           },
           "400": {
@@ -288,7 +288,7 @@
         }
       }      
     },
-    "GetMediaResponse": {
+    "getMediaResponse": {
       "type": "object",
       "properties": {
         "mediaDID": {
@@ -350,7 +350,7 @@
         }
       }
     },
-    "GetAllMediasResponses": {
+    "getAllMediasResponses": {
       "type": "object",
       "properties": {
         "Errors": {
@@ -362,12 +362,12 @@
         "Responses": {
           "type": "array",
           "items": {
-          "$ref": "#/definitions/GetmediaResponse"
+          "$ref": "#/definitions/getMediaResponse"
           }
         }
       }
     },
-    "GetOneMediaResponse": {
+    "getOneMediaResponse": {
       "type": "object",
       "properties": {
         "Errors": {
@@ -377,7 +377,7 @@
           }
         },
         "Response": {
-          "$ref": "#/definitions/GetMediaResponse"
+          "$ref": "#/definitions/getMediaResponse"
         }
       }
     }
