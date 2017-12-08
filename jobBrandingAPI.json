@@ -374,269 +374,269 @@
         "Name"
       ],
       "properties": {
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "Tracking": {
+        "tracking": {
           "type": "string"
         },
-        "CompanyDescription": {
+        "companyDescription": {
           "type": "string"
         },
-        "Media": {
+        "media": {
           "type": "object",
           "properties": {
-            "Header": {
+            "header": {
               "type": "string"
             },
-            "HeaderType": {
+            "headerType": {
               "type": "string"
             },
-            "TabletBanner": {
+            "tabletBanner": {
               "type": "string"
             },
-            "MobileLogo": {
+            "mobileLogo": {
               "type": "string"
             },
-            "Footer": {
+            "footer": {
               "type": "string"
             },
-            "Video": {
+            "video": {
               "type": "string"
             },
-            "IsMultiVideo": {
+            "isMultiVideo": {
               "type": "boolean"
             }
           }
         },
-        "Sections": {
+        "sections": {
           "type": "object",
           "properties": {
-            "CompanyInfo": {
+            "companyInfo": {
               "type": "object",
               "properties": {
-                "Section1": {
+                "section1": {
                   "type": "number"
                 },
-                "Section2": {
+                "section2": {
                   "type": "number"
                 },
-                "Section3": {
+                "section3": {
                   "type": "number"
                 }
               }
             },
-            "JobDetails": {
+            "jobDetails": {
               "type": "object",
               "properties": {
-                "Description": {
+                "description": {
                   "type": "number"
                 },
-                "Requirements": {
+                "requirements": {
                   "type": "number"
                 },
-                "Snapshot": {
+                "snapshot": {
                   "type": "number"
                 }
               }
             }
           }
         },
-        "Styles": {
+        "styles": {
           "type": "object",
           "properties": {
-            "Page": {
+            "page": {
               "type": "object",
               "properties": {
-                "BackgroundImage": {
+                "backgroundImage": {
                   "type": "string"
                 },
-                "BackgroundColor": {
+                "backgroundColor": {
                   "type": "string"
                 },
-                "BackgroundGradient": {
+                "backgroundGradient": {
                   "type": "object",
                   "properties":{
-                    "Orientation": {
+                    "orientation": {
                       "type": "string"
                     }
                   } 
                 }
               }
             },
-            "JobDetails": {
+            "jobDetails": {
               "type": "object",
               "properties": {
-                "Container":{
+                "container":{
                   "type": "object",
                   "properties": {
-                    "BorderColor": {
+                    "borderColor": {
                       "type": "string"
                     },
-                    "BorderRadius": {
+                    "borderRadius": {
                       "type": "number"
                     },
-                    "BorderSize": {
+                    "borderSize": {
                       "type": "number"
                     }
                   }
                 },
-                "Content":{
+                "content":{
                   "type": "object",
                   "properties": {
-                    "FontColor": {
+                    "fontColor": {
                       "type": "string"
                     },
-                    "FontSize": {
+                    "fontSize": {
                       "type": "number"
                     },
-                    "FontStyle": {
+                    "fontStyle": {
                       "type": "string"
                     }
                   }
                 },
-                "Headings":{
+                "headings":{
                   "type": "object",
                   "properties": {
-                    "FontColor": {
+                    "fontColor": {
                       "type": "string"
                     },
-                    "FontSize": {
+                    "fontSize": {
                       "type": "number"
                     },
-                    "FontStyle": {
+                    "fontStyle": {
                       "type": "string"
                     }
                   }
                 }
                 ,
-                "Title":{
+                "title":{
                   "type": "object",
                   "properties": {
-                    "BorderColor": {
+                    "borderColor": {
                       "type": "string"
                     },
-                    "BorderRadius": {
+                    "borderRadius": {
                       "type": "number"
                     },
-                    "BorderSize": {
+                    "borderSize": {
                       "type": "number"
                     }
                   }
                 }
               }
             },
-            "CompanyInfo": {
+            "companyInfo": {
               "type": "object",
               "properties": {
-                "CompanyOverview":{
+                "companyOverview":{
                   "type": "object",
                   "properties": {
-                    "OverviewHeader":{
+                    "cverviewHeader":{
                       "type": "object",
                       "properties":{
-                        "FontColor": {
+                        "fontColor": {
                           "type": "string"
                         },
-                        "BackgroundColor": {
+                        "backgroundColor": {
                           "type": "string"
                         },
-                        "BottomLineColor": {
+                        "bottomLineColor": {
                           "type": "string"
                         },
-                        "FontStyle": {
+                        "fontStyle": {
                           "type": "string"
                         }                        
                       }
                     },
-                    "OverviewBackground":{
+                    "overviewBackground":{
                       "type": "object",
                       "properties":{
-                        "BackgroundImage": {
+                        "backgroundImage": {
                           "type": "string"
                         },
-                        "BackgroundColor": {
+                        "backgroundColor": {
                           "type": "string"
                         }                     
                       }
                     }
                   }
                 },
-                "Buttons":{
+                "buttons":{
                   "type": "object",
                   "properties":{
-                    "BackgroundColor": {
+                    "backgroundColor": {
                       "type": "string"
                     },
-                    "BorderColor": {
+                    "borderColor": {
                       "type": "string"
                     },
-                    "BorderSize": {
+                    "borderSize": {
                       "type": "number"
                     },
-                    "FontColor": {
+                    "fontColor": {
                       "type": "string"
                     },
-                    "FontStyle": {
+                    "fontStyle": {
                       "type": "string"
                     }    
                   }
                 },
-                "Container":{
+                "container":{
                   "type": "object",
                   "properties": {
-                    "BackgroundColor": {
+                    "backgroundColor": {
                       "type": "string"
                     },
-                    "BackgroundGradient": {
+                    "backgroundGradient": {
                       "type": "object",
                       "properties":{
-                        "Orientation": {
+                        "orientation": {
                           "type": "string"
                         }
                       } 
                     },
-                    "BorderColor": {
+                    "borderColor": {
                       "type": "string"
                     },
-                    "BorderRadius": {
+                    "borderRadius": {
                       "type": "number"
                     },
-                    "BorderSize": {
+                    "borderSize": {
                       "type": "number"
                     }    
                   }
                 },
-                "Content":{
+                "content":{
                   "type": "object",
                   "properties":{
-                    "FontColor": {
+                    "fontColor": {
                       "type": "string"
                     },
-                    "FontSize": {
+                    "fontSize": {
                       "type": "number"
                     },
-                    "FontStyle": {
+                    "fontStyle": {
                       "type": "string"
                     }    
                   }
                 },
-                "Headings":{
+                "headings":{
                  "type": "object",
                  "properties": {
-                    "FontColor": {
+                    "fontColor": {
                       "type": "string"
                     },
-                    "FontSize": {
+                    "fontSize": {
                       "type": "number"
                     },
-                    "FontStyle": {
+                    "fontStyle": {
                       "type": "string"
                     }    
                   } 
@@ -645,22 +645,22 @@
             }
           }
         },
-        "Widgets" :{
+        "widgets" :{
           "type": "object",
           "properties": {
-            "Facebook": {
+            "facebook": {
               "type": "string"
             },
-            "Glassdoor": {
+            "glassdoor": {
               "type": "string"
             },
-            "LinkedIn": {
+            "linkedIn": {
               "type": "string"
             },
-            "Twitter": {
+            "twitter": {
               "type": "string"
             },
-            "ShowWidgets": {
+            "showWidgets": {
               "type": "boolean"
             }  
           }
