@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: SubGroupDID is required, mediaName is required"
+            "description": "Bad Request: job branding name is required"
          },
           "404": {
             "description": "Not Found"
@@ -68,32 +68,14 @@
         }
       }
     },
-    "/media/getall": {
+    "/jobBranding/getall": {
       "get": {
         "tags": [
-          "media API"
+          "job Branding API"
         ],
-        "summary": "Get all medias",
+        "summary": "Get all job brandings",
         "description": "",
-        "operationId": "GetAllMedias",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "Content-Type",
-            "default": "application/json",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "criteria for loading media",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/mediaLoadCritRequest"
-            }
-          }
-        ],
+        "operationId": "GetAllJobBrandings",        
         "produces": [
           "application/json"
         ],
@@ -101,11 +83,11 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/getAllMediasResponses"
+              "$ref": "#/definitions/getAllJobBrandingsResponse"
             }
           },
           "400": {
-            "description": "Bad Request: Fail to get media data"
+            "description": "Bad Request: Fail to get job branding data"
           },
           "404": {
             "description": "Not Found"
@@ -116,18 +98,18 @@
         }
       }
     },   
-    "/media/{mediaDID}": {
+    "/jobBranding/{jobBrandingDID}": {
       "get": {
         "tags": [
-          "media API"
+          "job Branding API"
         ],
-        "summary": "Get media by mediaDID",
+        "summary": "Get job branding by jobBrandingDID",
         "description": "",
-        "operationId": "GetMedia",
+        "operationId": "GetJobBranding",
         "parameters": [          
           {
             "in": "path",
-            "name": "mediaDID", 
+            "name": "jobBrandingDID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -140,11 +122,11 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/getOneMediaResponse"
+              "$ref": "#/definitions/getOneJobBrandingResponse"
             }
           },
           "400": {
-            "description": "Bad Request: Fail to get media data"
+            "description": "Bad Request: Fail to get job branding data"
           },
           "404": {
             "description": "Not Found"
@@ -156,11 +138,11 @@
       },
       "put": {
         "tags": [
-          "media API"
+          "job Branding API"
         ],
-        "summary": "update media by mediaDID",
+        "summary": "update job Branding by jobBrandingDID",
         "description": "",
-        "operationId": "updateMedia",
+        "operationId": "updateJobBranding",
         "consumes": [
           "application/json"
         ],
@@ -177,7 +159,7 @@
           },
           {
             "in": "path",
-            "name": "mediaDID", 
+            "name": "jobBrandingDID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -185,10 +167,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "update media detail",
+            "description": "update job branding detail",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/mediaUpdateRequest"
+              "$ref": "#/definitions/jobBrandingPostRequest"
             }
           }
         ],
@@ -196,11 +178,11 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/getOneMediaResponse"
+              "$ref": "#/definitions/getOneJobBrandingResponse"
             }
           },
           "400": {
-            "description": "Bad Request: mediaDID is required, SubGroupDID is required, mediaName is required"
+            "description": "Bad Request: jobBrandingDID is required, name is required"
          },
           "404": {
             "description": "Not Found"
@@ -212,15 +194,15 @@
       },
       "delete": {
         "tags": [
-          "media API"
+          "job Branding API"
         ],
-        "summary": "delete media by mediaDID",
+        "summary": "delete job branding by jobBrandingDID",
         "description": "",
-        "operationId": "deleteMedia",
+        "operationId": "deleteJobBranding",
         "parameters": [          
           {
             "in": "path",
-            "name": "mediaDID", 
+            "name": "jobBrandingDID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -234,63 +216,8 @@
             "description": "successful operation"
           },
           "400": {
-            "description": "Bad Request: Fail to get media data"
+            "description": "Bad Request: Fail to delete job branding"
           },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/media/share/{mediaDID}": {
-      "post": {
-        "tags": [
-          "media API"
-        ],
-        "summary": "share media",
-        "description": "",
-        "operationId": "shareMedia",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [          
-          {
-            "in": "header",
-            "name": "Content-Type",
-            "default": "application/json",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "mediaDID", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "target media for sharing",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/mediaShareRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Bad Request: targetMediaGroup is required, targetMediaSubGroup is required"
-         },
           "404": {
             "description": "Not Found"
           },
@@ -302,76 +229,10 @@
     }
   },
   "definitions": {
-    "mediaShareRequest":{
-      "type": "array",
-      "items": {
-        "type": "object",    
-        "required": [
-          "targetMediaGroup",
-          "targetMediaSubGroup"
-        ],  
-        "properties": {
-          "targetMediaGroup": {
-            "type": "string"
-          },
-          "targetMediaSubGroup": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "mediaLoadCritRequest":{
-      "type": "object",      
-      "properties": {
-        "mediaGroup": {
-          "type": "string"
-        },
-        "mediaSubGroup": {
-          "type": "string"
-        },
-        "pageNo": {
-          "type": "number"
-        },
-        "pageSize": {
-          "type": "number"
-        },
-        "sortBy": {
-          "type": "string"
-        }      
-      } 
-    },
-    "mediaUpdateRequest": {
-      "type": "object",
-      "required": [
-        "mediaGroup",
-        "mediaSubGroup"
-      ],
-      "properties": {        
-        "mediaGroup": {
-          "type": "string"
-        },
-        "mediaSubGroup": {
-          "type": "string"
-        },
-        "mediaName": {
-          "type": "string"
-        },
-        "mediaType": {
-          "type": "string"
-        },
-        "fileBytes": {
-          "type": "string"
-        },
-        "externalURL": {
-          "type": "string"
-        }
-      }      
-    },
-
     "jobBrandingPostRequest": {
       "type": "object",
       "required": [
-        "Name"
+        "name"
       ],
       "properties": {
         "name": {
@@ -665,60 +526,334 @@
             }  
           }
         }
-
       }      
     },
-    "getMediaResponse": {
+    "getBriefJobBrandingResponse":{
       "type": "object",
       "properties": {
-        "mediaDID": {
+        "jobBrandingDID": {
           "type": "string"
         },
-        "mediaGroup": {
+        "name": {
           "type": "string"
         },
-        "mediaSubGroup": {
+        "type": {
           "type": "string"
         },
-        "mediaName": {
+        "status": {
           "type": "string"
-        },
-        "mediaPath": {
-          "type": "string"
-        },
-        "mediaContent": {
-          "type": "string"
-        },
-        "externalURL": {
-          "type": "string"
-        },
-        "mediaWidth": {
-          "type": "integer"
-        },
-        "mediaHeight": {
-          "type": "integer"
-        },
-        "mediaFileSize": {
-          "type": "integer"
-        },
-        "mediaType": {
-          "type": "string"
-        },        
-        "mediaTotalUsage": {
-          "type": "integer"
         }
       }
+    },
+    "getJobBrandingResponse": {
+        "type": "object",
+        "properties": {
+          "jobBrandingDID": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tracking": {
+            "type": "string"
+          },
+          "companyDescription": {
+            "type": "string"
+          },
+          "media": {
+            "type": "object",
+            "properties": {
+              "header": {
+                "type": "string"
+              },
+              "headerType": {
+                "type": "string"
+              },
+              "tabletBanner": {
+                "type": "string"
+              },
+              "mobileLogo": {
+                "type": "string"
+              },
+              "footer": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              },
+              "isMultiVideo": {
+                "type": "boolean"
+              }
+            }
+          },
+          "sections": {
+            "type": "object",
+            "properties": {
+              "companyInfo": {
+                "type": "object",
+                "properties": {
+                  "section1": {
+                    "type": "number"
+                  },
+                  "section2": {
+                    "type": "number"
+                  },
+                  "section3": {
+                    "type": "number"
+                  }
+                }
+              },
+              "jobDetails": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "number"
+                  },
+                  "requirements": {
+                    "type": "number"
+                  },
+                  "snapshot": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "styles": {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "object",
+                "properties": {
+                  "backgroundImage": {
+                    "type": "string"
+                  },
+                  "backgroundColor": {
+                    "type": "string"
+                  },
+                  "backgroundGradient": {
+                    "type": "object",
+                    "properties":{
+                      "orientation": {
+                        "type": "string"
+                      }
+                    } 
+                  }
+                }
+              },
+              "jobDetails": {
+                "type": "object",
+                "properties": {
+                  "container":{
+                    "type": "object",
+                    "properties": {
+                      "borderColor": {
+                        "type": "string"
+                      },
+                      "borderRadius": {
+                        "type": "number"
+                      },
+                      "borderSize": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "content":{
+                    "type": "object",
+                    "properties": {
+                      "fontColor": {
+                        "type": "string"
+                      },
+                      "fontSize": {
+                        "type": "number"
+                      },
+                      "fontStyle": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "headings":{
+                    "type": "object",
+                    "properties": {
+                      "fontColor": {
+                        "type": "string"
+                      },
+                      "fontSize": {
+                        "type": "number"
+                      },
+                      "fontStyle": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                  ,
+                  "title":{
+                    "type": "object",
+                    "properties": {
+                      "borderColor": {
+                        "type": "string"
+                      },
+                      "borderRadius": {
+                        "type": "number"
+                      },
+                      "borderSize": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "companyInfo": {
+                "type": "object",
+                "properties": {
+                  "companyOverview":{
+                    "type": "object",
+                    "properties": {
+                      "cverviewHeader":{
+                        "type": "object",
+                        "properties":{
+                          "fontColor": {
+                            "type": "string"
+                          },
+                          "backgroundColor": {
+                            "type": "string"
+                          },
+                          "bottomLineColor": {
+                            "type": "string"
+                          },
+                          "fontStyle": {
+                            "type": "string"
+                          }                        
+                        }
+                      },
+                      "overviewBackground":{
+                        "type": "object",
+                        "properties":{
+                          "backgroundImage": {
+                            "type": "string"
+                          },
+                          "backgroundColor": {
+                            "type": "string"
+                          }                     
+                        }
+                      }
+                    }
+                  },
+                  "buttons":{
+                    "type": "object",
+                    "properties":{
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "borderColor": {
+                        "type": "string"
+                      },
+                      "borderSize": {
+                        "type": "number"
+                      },
+                      "fontColor": {
+                        "type": "string"
+                      },
+                      "fontStyle": {
+                        "type": "string"
+                      }    
+                    }
+                  },
+                  "container":{
+                    "type": "object",
+                    "properties": {
+                      "backgroundColor": {
+                        "type": "string"
+                      },
+                      "backgroundGradient": {
+                        "type": "object",
+                        "properties":{
+                          "orientation": {
+                            "type": "string"
+                          }
+                        } 
+                      },
+                      "borderColor": {
+                        "type": "string"
+                      },
+                      "borderRadius": {
+                        "type": "number"
+                      },
+                      "borderSize": {
+                        "type": "number"
+                      }    
+                    }
+                  },
+                  "content":{
+                    "type": "object",
+                    "properties":{
+                      "fontColor": {
+                        "type": "string"
+                      },
+                      "fontSize": {
+                        "type": "number"
+                      },
+                      "fontStyle": {
+                        "type": "string"
+                      }    
+                    }
+                  },
+                  "headings":{
+                   "type": "object",
+                   "properties": {
+                      "fontColor": {
+                        "type": "string"
+                      },
+                      "fontSize": {
+                        "type": "number"
+                      },
+                      "fontStyle": {
+                        "type": "string"
+                      }    
+                    } 
+                  }
+                }
+              }
+            }
+          },
+          "widgets" :{
+            "type": "object",
+            "properties": {
+              "facebook": {
+                "type": "string"
+              },
+              "glassdoor": {
+                "type": "string"
+              },
+              "linkedIn": {
+                "type": "string"
+              },
+              "twitter": {
+                "type": "string"
+              },
+              "showWidgets": {
+                "type": "boolean"
+              }  
+            }
+          }
+        }      
     },
     "jobBrandingPostResponse":{
       "type": "object",
       "properties": {
-        "Errors": {
+        "errors": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Response": {
+        "response": {
           "type": "object",
           "properties": {
             "jobBrandingDID": {
@@ -731,51 +866,42 @@
     "APIResponseError": {
       "type": "object",
       "properties": {
-        "Error": {
+        "error": {
           "type": "string"
         }
       }
     },
-    "getAllMediasResponses": {
+    "getAllJobBrandingsResponse": {
       "type": "object",
       "properties": {
-        "Errors": {
+        "errors": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "mediaGroup": {
+        "accountDID": {
           "type": "string"
         },
-        "mediaSubGroup": {
-          "type": "string"
-        },
-        "pageNo": {
-          "type": "number"
-        },
-        "TotalPages": {
-          "type": "number"
-        },
-        "Responses": {
+        "responses": {
           "type": "array",
           "items": {
-          "$ref": "#/definitions/getMediaResponse"
+          "$ref": "#/definitions/getBriefJobBrandingResponse"
           }
         }
       }
     },
-    "getOneMediaResponse": {
+    "getOneJobBrandingResponse": {
       "type": "object",
       "properties": {
-        "Errors": {
+        "errors": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/APIResponseError"
           }
         },
-        "Response": {
-          "$ref": "#/definitions/getMediaResponse"
+        "response": {
+          "$ref": "#/definitions/getJobBrandingResponse"
         }
       }
     }
