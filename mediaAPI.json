@@ -26,27 +26,36 @@
           "description": "",
           "operationId": "postNewMedia",
           "consumes": [
-            "application/json"
+            "multipart/form-data"
           ],
           "produces": [
             "application/json"
           ],
-          "parameters": [         
-            {
-              "in": "header",
-              "name": "Content-Type",
-              "default": "application/json",
+          "parameters": [           
+            {              
+              "in": "formData",
+              "name": "MediaGroup",
               "required": true,
               "type": "string"
             },
-            {
-              "in": "body",
-              "name": "body",
-              "description": "update media detail",
+            {              
+              "in": "formData",
+              "name": "MediaSubGroup",
               "required": true,
-              "schema": {
-                "$ref": "#/definitions/MediaPostRequest"
-              }
+              "type": "string"
+            },
+            {              
+              "in": "formData",
+              "name": "MediaFile",
+              "description": "file to upload",
+              "required": false,
+              "type": "file"
+            },
+            {              
+              "in": "formData",
+              "name": "ExternalURL",
+              "required": false,
+              "type": "string"
             }
           ],
           "responses": {
@@ -160,34 +169,43 @@
           "description": "",
           "operationId": "updateMedia",
           "consumes": [
-            "application/json"
+            "multipart/form-data"
           ],
           "produces": [
             "application/json"
           ],
-          "parameters": [          
-            {
-              "in": "header",
-              "name": "Content-Type",
-              "default": "application/json",
-              "required": true,
-              "type": "string"
-            },
+          "parameters": [  
             {
               "in": "path",
               "name": "DID", 
               "default": "",
               "required": true,
               "type": "string"
-            },
-            {
-              "in": "body",
-              "name": "body",
-              "description": "update media detail",
+            },         
+            {              
+              "in": "formData",
+              "name": "MediaGroup",
               "required": true,
-              "schema": {
-                "$ref": "#/definitions/MediaPostRequest"
-              }
+              "type": "string"
+            },
+            {              
+              "in": "formData",
+              "name": "MediaSubGroup",
+              "required": true,
+              "type": "string"
+            },
+            {              
+              "in": "formData",
+              "name": "MediaFile",
+              "description": "file to upload",
+              "required": false,
+              "type": "file"
+            },
+            {              
+              "in": "formData",
+              "name": "ExternalURL",
+              "required": false,
+              "type": "string"
             }
           ],
           "responses": {
@@ -258,37 +276,6 @@
             "type": "string"
           }
         } 
-      },      
-      "MediaPostRequest": {
-        "type": "object",
-        "required": [
-          "MediaGroup",
-          "MediaSubGroup",
-          "MediaName"
-        ],
-        "properties": {
-          "DID": {
-            "type": "string"
-          },
-          "MediaGroup": {
-            "type": "string"
-          },
-          "MediaSubGroup": {
-            "type": "string"
-          },
-          "MediaName": {
-            "type": "string"
-          },
-           "MediaType": {
-            "type": "string"
-          },
-          "FileBytes": {
-            "type": "string"
-          },
-          "ExternalURL": {
-            "type": "string"
-          }
-        }      
       },
       "GetMediaResponse": {
         "type": "object",
