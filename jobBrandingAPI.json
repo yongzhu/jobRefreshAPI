@@ -6,7 +6,7 @@
     "title": "job Branding API"
   },
   "host": "api.careerbuilder.com",
-  "basePath": "/corporate/jobposterapi/jobBranding",
+  "basePath": "/corporate/jobposterapi/JobBranding",
   "tags": [
     {
       "name": "job Branding API",
@@ -17,12 +17,12 @@
     "http"
   ],
   "paths": {
-    "/jobBranding": {
+    "/JobBranding": {
       "post": {
         "tags": [
           "job Branding API"
         ],
-        "summary": "add new job Branding",
+        "summary": "add new job branding",
         "description": "",
         "operationId": "postNewJobBranding",
         "consumes": [
@@ -45,7 +45,7 @@
             "description": "post new job branding",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/jobBrandingPostRequest"
+              "$ref": "#/definitions/JobBrandingReqNResObj"
             }
           }
         ],
@@ -53,7 +53,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/jobBrandingPostResponse"
+              "$ref": "#/definitions/GetOneJobBrandingResponse"
             }
           },
           "400": {
@@ -68,79 +68,12 @@
         }
       }
     },
-    "/jobBranding/getall": {
-      "get": {
-        "tags": [
-          "job Branding API"
-        ],
-        "summary": "Get all job brandings",
-        "description": "",
-        "operationId": "GetAllJobBrandings",        
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/getAllJobBrandingsResponse"
-            }
-          },
-          "400": {
-            "description": "Bad Request: Fail to get job branding data"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },   
-    "/jobBranding/{jobBrandingDID}": {
-      "get": {
-        "tags": [
-          "job Branding API"
-        ],
-        "summary": "Get job branding by jobBrandingDID",
-        "description": "",
-        "operationId": "GetJobBranding",
-        "parameters": [          
-          {
-            "in": "path",
-            "name": "jobBrandingDID", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/getOneJobBrandingResponse"
-            }
-          },
-          "400": {
-            "description": "Bad Request: Fail to get job branding data"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
+    "/JobBranding/{ID}": {      
       "put": {
         "tags": [
           "job Branding API"
         ],
-        "summary": "update job Branding by jobBrandingDID",
+        "summary": "update job branding by ID",
         "description": "",
         "operationId": "updateJobBranding",
         "consumes": [
@@ -159,7 +92,7 @@
           },
           {
             "in": "path",
-            "name": "jobBrandingDID", 
+            "name": "ID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -170,7 +103,7 @@
             "description": "update job branding detail",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/jobBrandingPostRequest"
+              "$ref": "#/definitions/JobBrandingReqNResObj"
             }
           }
         ],
@@ -178,7 +111,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/getOneJobBrandingResponse"
+              "$ref": "#/definitions/GetOneJobBrandingResponse"
             }
           },
           "400": {
@@ -196,13 +129,13 @@
         "tags": [
           "job Branding API"
         ],
-        "summary": "delete job branding by jobBrandingDID",
+        "summary": "delete job branding by ID",
         "description": "",
         "operationId": "deleteJobBranding",
         "parameters": [          
           {
             "in": "path",
-            "name": "jobBrandingDID", 
+            "name": "ID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -213,7 +146,10 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/DeleteJobBrandingResponse"
+            }
           },
           "400": {
             "description": "Bad Request: Fail to delete job branding"
@@ -229,275 +165,294 @@
     }
   },
   "definitions": {
-    "jobBrandingPostRequest": {
+    "DeleteJobBrandingResponse": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items":
+          {
+            "type": "string"
+          }
+        },
+        "Results": {
+          "type": "array",
+          "items":
+          {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "JobBrandingReqNResObj": {
       "type": "object",
       "required": [
-        "name"
+        "Name"
       ],
       "properties": {
-        "name": {
+        "Name": {
           "type": "string"
         },
-        "type": {
+        "Type": {
           "type": "string"
         },
-        "status": {
+        "Status": {
           "type": "string"
         },
-        "tracking": {
+        "Tracking": {
           "type": "string"
         },
-        "companyDescription": {
+        "CompanyDescription": {
           "type": "string"
         },
-        "media": {
+        "Media": {
           "type": "object",
           "properties": {
-            "header": {
+            "Header": {
               "type": "string"
             },
-            "headerType": {
+            "HeaderType": {
               "type": "string"
             },
-            "tabletBanner": {
+            "TabletBanner": {
               "type": "string"
             },
-            "mobileLogo": {
+            "MobileLogo": {
               "type": "string"
             },
-            "footer": {
+            "Footer": {
               "type": "string"
             },
-            "video": {
+            "Video": {
               "type": "string"
             },
-            "isMultiVideo": {
+            "IsMultiVideo": {
               "type": "boolean"
             }
           }
         },
-        "sections": {
+        "Sections": {
           "type": "object",
           "properties": {
-            "companyInfo": {
+            "CompanyInfo": {
               "type": "object",
               "properties": {
-                "section1": {
+                "Section1": {
                   "type": "number"
                 },
-                "section2": {
+                "Section2": {
                   "type": "number"
                 },
-                "section3": {
+                "Section3": {
                   "type": "number"
                 }
               }
             },
-            "jobDetails": {
+            "JobDetails": {
               "type": "object",
               "properties": {
-                "description": {
+                "Description": {
                   "type": "number"
                 },
-                "requirements": {
+                "Requirements": {
                   "type": "number"
                 },
-                "snapshot": {
+                "Snapshot": {
                   "type": "number"
                 }
               }
             }
           }
         },
-        "styles": {
+        "Styles": {
           "type": "object",
           "properties": {
-            "page": {
+            "Page": {
               "type": "object",
               "properties": {
-                "backgroundImage": {
+                "BackgroundImage": {
                   "type": "string"
                 },
-                "backgroundColor": {
+                "BackgroundColor": {
                   "type": "string"
                 },
-                "backgroundGradient": {
+                "BackgroundGradient": {
                   "type": "object",
                   "properties":{
-                    "orientation": {
+                    "Orientation": {
                       "type": "string"
                     }
                   } 
                 }
               }
             },
-            "jobDetails": {
+            "JobDetails": {
               "type": "object",
               "properties": {
-                "container":{
+                "Container":{
                   "type": "object",
                   "properties": {
-                    "borderColor": {
+                    "BorderColor": {
                       "type": "string"
                     },
-                    "borderRadius": {
+                    "BorderRadius": {
                       "type": "number"
                     },
-                    "borderSize": {
+                    "BorderSize": {
                       "type": "number"
                     }
                   }
                 },
-                "content":{
+                "Content":{
                   "type": "object",
                   "properties": {
-                    "fontColor": {
+                    "FontColor": {
                       "type": "string"
                     },
-                    "fontSize": {
+                    "FontSize": {
                       "type": "number"
                     },
-                    "fontStyle": {
+                    "FontStyle": {
                       "type": "string"
                     }
                   }
                 },
-                "headings":{
+                "Headings":{
                   "type": "object",
                   "properties": {
-                    "fontColor": {
+                    "FontColor": {
                       "type": "string"
                     },
-                    "fontSize": {
+                    "FontSize": {
                       "type": "number"
                     },
-                    "fontStyle": {
+                    "FontStyle": {
                       "type": "string"
                     }
                   }
                 }
                 ,
-                "title":{
+                "Title":{
                   "type": "object",
                   "properties": {
-                    "borderColor": {
+                    "BorderColor": {
                       "type": "string"
                     },
-                    "borderRadius": {
+                    "BorderRadius": {
                       "type": "number"
                     },
-                    "borderSize": {
+                    "BorderSize": {
                       "type": "number"
                     }
                   }
                 }
               }
             },
-            "companyInfo": {
+            "CompanyInfo": {
               "type": "object",
               "properties": {
-                "companyOverview":{
+                "CompanyOverview":{
                   "type": "object",
                   "properties": {
-                    "cverviewHeader":{
+                    "OverviewHeader":{
                       "type": "object",
                       "properties":{
-                        "fontColor": {
+                        "FontColor": {
                           "type": "string"
                         },
-                        "backgroundColor": {
+                        "BackgroundColor": {
                           "type": "string"
                         },
-                        "bottomLineColor": {
+                        "BottomLineColor": {
                           "type": "string"
                         },
-                        "fontStyle": {
+                        "FontStyle": {
                           "type": "string"
                         }                        
                       }
                     },
-                    "overviewBackground":{
+                    "OverviewBackground":{
                       "type": "object",
                       "properties":{
-                        "backgroundImage": {
+                        "BackgroundImage": {
                           "type": "string"
                         },
-                        "backgroundColor": {
+                        "BackgroundColor": {
                           "type": "string"
                         }                     
                       }
                     }
                   }
                 },
-                "buttons":{
+                "Buttons":{
                   "type": "object",
                   "properties":{
-                    "backgroundColor": {
+                    "BackgroundColor": {
                       "type": "string"
                     },
-                    "borderColor": {
+                    "BorderColor": {
                       "type": "string"
                     },
-                    "borderSize": {
+                    "BorderSize": {
                       "type": "number"
                     },
-                    "fontColor": {
+                    "FontColor": {
                       "type": "string"
                     },
-                    "fontStyle": {
+                    "FontStyle": {
                       "type": "string"
                     }    
                   }
                 },
-                "container":{
+                "Container":{
                   "type": "object",
                   "properties": {
-                    "backgroundColor": {
+                    "BackgroundColor": {
                       "type": "string"
                     },
-                    "backgroundGradient": {
+                    "BackgroundGradient": {
                       "type": "object",
                       "properties":{
-                        "orientation": {
+                        "Orientation": {
                           "type": "string"
                         }
                       } 
                     },
-                    "borderColor": {
+                    "BorderColor": {
                       "type": "string"
                     },
-                    "borderRadius": {
+                    "BorderRadius": {
                       "type": "number"
                     },
-                    "borderSize": {
+                    "BorderSize": {
                       "type": "number"
                     }    
                   }
                 },
-                "content":{
+                "Content":{
                   "type": "object",
                   "properties":{
-                    "fontColor": {
+                    "FontColor": {
                       "type": "string"
                     },
-                    "fontSize": {
+                    "FontSize": {
                       "type": "number"
                     },
-                    "fontStyle": {
+                    "FontStyle": {
                       "type": "string"
                     }    
                   }
                 },
-                "headings":{
+                "Headings":{
                  "type": "object",
                  "properties": {
-                    "fontColor": {
+                    "FontColor": {
                       "type": "string"
                     },
-                    "fontSize": {
+                    "FontSize": {
                       "type": "number"
                     },
-                    "fontStyle": {
+                    "FontStyle": {
                       "type": "string"
                     }    
                   } 
@@ -506,402 +461,42 @@
             }
           }
         },
-        "widgets" :{
+        "Widgets" :{
           "type": "object",
           "properties": {
-            "facebook": {
+            "Facebook": {
               "type": "string"
             },
-            "glassdoor": {
+            "Glassdoor": {
               "type": "string"
             },
-            "linkedIn": {
+            "LinkedIn": {
               "type": "string"
             },
-            "twitter": {
+            "Twitter": {
               "type": "string"
             },
-            "showWidgets": {
+            "ShowWidgets": {
               "type": "boolean"
             }  
           }
         }
       }      
-    },
-    "getBriefJobBrandingResponse":{
+    },   
+    "GetOneJobBrandingResponse": {
       "type": "object",
       "properties": {
-        "jobBrandingDID": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        }
-      }
-    },
-    "getJobBrandingResponse": {
-        "type": "object",
-        "properties": {
-          "jobBrandingDID": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          },
-          "tracking": {
-            "type": "string"
-          },
-          "companyDescription": {
-            "type": "string"
-          },
-          "media": {
-            "type": "object",
-            "properties": {
-              "header": {
-                "type": "string"
-              },
-              "headerType": {
-                "type": "string"
-              },
-              "tabletBanner": {
-                "type": "string"
-              },
-              "mobileLogo": {
-                "type": "string"
-              },
-              "footer": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "isMultiVideo": {
-                "type": "boolean"
-              }
-            }
-          },
-          "sections": {
-            "type": "object",
-            "properties": {
-              "companyInfo": {
-                "type": "object",
-                "properties": {
-                  "section1": {
-                    "type": "number"
-                  },
-                  "section2": {
-                    "type": "number"
-                  },
-                  "section3": {
-                    "type": "number"
-                  }
-                }
-              },
-              "jobDetails": {
-                "type": "object",
-                "properties": {
-                  "description": {
-                    "type": "number"
-                  },
-                  "requirements": {
-                    "type": "number"
-                  },
-                  "snapshot": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
-          },
-          "styles": {
-            "type": "object",
-            "properties": {
-              "page": {
-                "type": "object",
-                "properties": {
-                  "backgroundImage": {
-                    "type": "string"
-                  },
-                  "backgroundColor": {
-                    "type": "string"
-                  },
-                  "backgroundGradient": {
-                    "type": "object",
-                    "properties":{
-                      "orientation": {
-                        "type": "string"
-                      }
-                    } 
-                  }
-                }
-              },
-              "jobDetails": {
-                "type": "object",
-                "properties": {
-                  "container":{
-                    "type": "object",
-                    "properties": {
-                      "borderColor": {
-                        "type": "string"
-                      },
-                      "borderRadius": {
-                        "type": "number"
-                      },
-                      "borderSize": {
-                        "type": "number"
-                      }
-                    }
-                  },
-                  "content":{
-                    "type": "object",
-                    "properties": {
-                      "fontColor": {
-                        "type": "string"
-                      },
-                      "fontSize": {
-                        "type": "number"
-                      },
-                      "fontStyle": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "headings":{
-                    "type": "object",
-                    "properties": {
-                      "fontColor": {
-                        "type": "string"
-                      },
-                      "fontSize": {
-                        "type": "number"
-                      },
-                      "fontStyle": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                  ,
-                  "title":{
-                    "type": "object",
-                    "properties": {
-                      "borderColor": {
-                        "type": "string"
-                      },
-                      "borderRadius": {
-                        "type": "number"
-                      },
-                      "borderSize": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                }
-              },
-              "companyInfo": {
-                "type": "object",
-                "properties": {
-                  "companyOverview":{
-                    "type": "object",
-                    "properties": {
-                      "cverviewHeader":{
-                        "type": "object",
-                        "properties":{
-                          "fontColor": {
-                            "type": "string"
-                          },
-                          "backgroundColor": {
-                            "type": "string"
-                          },
-                          "bottomLineColor": {
-                            "type": "string"
-                          },
-                          "fontStyle": {
-                            "type": "string"
-                          }                        
-                        }
-                      },
-                      "overviewBackground":{
-                        "type": "object",
-                        "properties":{
-                          "backgroundImage": {
-                            "type": "string"
-                          },
-                          "backgroundColor": {
-                            "type": "string"
-                          }                     
-                        }
-                      }
-                    }
-                  },
-                  "buttons":{
-                    "type": "object",
-                    "properties":{
-                      "backgroundColor": {
-                        "type": "string"
-                      },
-                      "borderColor": {
-                        "type": "string"
-                      },
-                      "borderSize": {
-                        "type": "number"
-                      },
-                      "fontColor": {
-                        "type": "string"
-                      },
-                      "fontStyle": {
-                        "type": "string"
-                      }    
-                    }
-                  },
-                  "container":{
-                    "type": "object",
-                    "properties": {
-                      "backgroundColor": {
-                        "type": "string"
-                      },
-                      "backgroundGradient": {
-                        "type": "object",
-                        "properties":{
-                          "orientation": {
-                            "type": "string"
-                          }
-                        } 
-                      },
-                      "borderColor": {
-                        "type": "string"
-                      },
-                      "borderRadius": {
-                        "type": "number"
-                      },
-                      "borderSize": {
-                        "type": "number"
-                      }    
-                    }
-                  },
-                  "content":{
-                    "type": "object",
-                    "properties":{
-                      "fontColor": {
-                        "type": "string"
-                      },
-                      "fontSize": {
-                        "type": "number"
-                      },
-                      "fontStyle": {
-                        "type": "string"
-                      }    
-                    }
-                  },
-                  "headings":{
-                   "type": "object",
-                   "properties": {
-                      "fontColor": {
-                        "type": "string"
-                      },
-                      "fontSize": {
-                        "type": "number"
-                      },
-                      "fontStyle": {
-                        "type": "string"
-                      }    
-                    } 
-                  }
-                }
-              }
-            }
-          },
-          "widgets" :{
-            "type": "object",
-            "properties": {
-              "facebook": {
-                "type": "string"
-              },
-              "glassdoor": {
-                "type": "string"
-              },
-              "linkedIn": {
-                "type": "string"
-              },
-              "twitter": {
-                "type": "string"
-              },
-              "showWidgets": {
-                "type": "boolean"
-              }  
-            }
-          }
-        }      
-    },
-    "jobBrandingPostResponse":{
-      "type": "object",
-      "properties": {
-        "errors": {
+        "Errors": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/APIResponseError"
+            "type": "string"
           }
         },
-        "response": {
-          "type": "object",
-          "properties": {
-            "jobBrandingDID": {
-              "type": "string"
-            }
-          }
-        }
-      }      
-    },
-    "APIResponseError": {
-      "type": "object",
-      "properties": {
-        "error": {
-          "type": "string"
-        }
-      }
-    },
-    "getAllJobBrandingsResponse": {
-      "type": "object",
-      "properties": {
-        "errors": {
+        "Results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/APIResponseError"
+            "$ref": "#/definitions/JobBrandingReqNResObj"
           }
-        },
-        "accountDID": {
-          "type": "string"
-        },
-        "responses": {
-          "type": "array",
-          "items": {
-          "$ref": "#/definitions/getBriefJobBrandingResponse"
-          }
-        }
-      }
-    },
-    "getOneJobBrandingResponse": {
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/APIResponseError"
-          }
-        },
-        "response": {
-          "$ref": "#/definitions/getJobBrandingResponse"
         }
       }
     }
