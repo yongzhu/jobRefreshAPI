@@ -3,14 +3,14 @@
     "info": {
       "description": "for all following APIs, it should add 2 parameters at API request header before calling API: X_PROXY_SECRET_TOKEN and AUTHORIZATION, all APIs retrieve current accountDID and UserDID from AUTHORIZATION",
       "version": "1.0.0",
-      "title": "media API"
+      "title": "Media API"
     },
     "host": "api.careerbuilder.com",
     "basePath": "/corporate/jobposterapi/media",
     "tags": [
       {
-        "name": "media API",
-        "description": "media API"
+        "name": "Media API",
+        "description": "Media API"
       }
     ],
     "schemes": [
@@ -20,7 +20,7 @@
       "/media": {
         "post": {
           "tags": [
-            "media API"
+            "Media API"
           ],
           "summary": "add new media",
           "description": "",
@@ -45,7 +45,7 @@
               "description": "update media detail",
               "required": true,
               "schema": {
-                "$ref": "#/definitions/mediaPostRequest"
+                "$ref": "#/definitions/MediaPostRequest"
               }
             }
           ],
@@ -53,7 +53,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/mediaPostResponse"
+                "$ref": "#/definitions/MediaPostResponse"
               }
             },
             "400": {
@@ -69,7 +69,7 @@
         },
         "get": {
           "tags": [
-            "media API"
+            "Media API"
           ],
           "summary": "get medias by group",
           "description": "",
@@ -88,7 +88,7 @@
               "description": "criteria for loading media",
               "required": true,
               "schema": {
-                "$ref": "#/definitions/mediaLoadCritRequest"
+                "$ref": "#/definitions/MediaLoadCritRequest"
               }
             }
           ],
@@ -99,7 +99,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/getAllMediasResponses"
+                "$ref": "#/definitions/GetAllMediasResponses"
               }
             },
             "400": {
@@ -117,7 +117,7 @@
       "/media/{ID}": {
         "get": {
           "tags": [
-            "media API"
+            "Media API"
           ],
           "summary": "get media by mediaDID",
           "description": "",
@@ -138,7 +138,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/getOneMediaResponse"
+                "$ref": "#/definitions/GetOneMediaResponse"
               }
             },
             "400": {
@@ -154,7 +154,7 @@
         },
         "put": {
           "tags": [
-            "media API"
+            "Media API"
           ],
           "summary": "update media by mediaDID",
           "description": "",
@@ -186,7 +186,7 @@
               "description": "update media detail",
               "required": true,
               "schema": {
-                "$ref": "#/definitions/mediaUpdateRequest"
+                "$ref": "#/definitions/MediaUpdateRequest"
               }
             }
           ],
@@ -194,7 +194,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/getOneMediaResponse"
+                "$ref": "#/definitions/GetOneMediaResponse"
               }
             },
             "400": {
@@ -210,7 +210,7 @@
         },
         "delete": {
           "tags": [
-            "media API"
+            "Media API"
           ],
           "summary": "delete media by mediaDID",
           "description": "",
@@ -231,7 +231,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/deleteMediaResponse"
+                "$ref": "#/definitions/DeleteMediaResponse"
               }
             },
             "400": {
@@ -248,13 +248,13 @@
       }
     },
     "definitions": {   
-      "mediaLoadCritRequest":{
+      "MediaLoadCritRequest":{
         "type": "object",      
         "properties": {
-          "mediaGroup": {
+          "MediaGroup": {
             "type": "string"
           },
-          "mediaSubGroup": {
+          "MediaSubGroup": {
             "type": "string"
           },
           "pageNo": {
@@ -268,103 +268,103 @@
           }      
         } 
       },
-      "mediaUpdateRequest": {
+      "MediaUpdateRequest": {
         "type": "object",
         "required": [
-          "mediaGroup",
-          "mediaSubGroup"
+          "MediaGroup",
+          "MediaSubGroup"
         ],
         "properties": {        
-          "mediaGroup": {
+          "MediaGroup": {
             "type": "string"
           },
-          "mediaSubGroup": {
+          "MediaSubGroup": {
             "type": "string"
           },
-          "mediaName": {
+          "MediaName": {
             "type": "string"
           },
-          "mediaType": {
+          "MediaType": {
             "type": "string"
           },
-          "fileBytes": {
+          "FileBytes": {
             "type": "string"
           },
-          "externalURL": {
+          "ExternalURL": {
             "type": "string"
           }
         }      
       },
-      "mediaPostRequest": {
+      "MediaPostRequest": {
         "type": "object",
         "required": [
-          "mediaGroup",
-          "mediaSubGroup",
-          "mediaName"
+          "MediaGroup",
+          "MediaSubGroup",
+          "MediaName"
         ],
         "properties": {
-          "mediaGroup": {
+          "MediaGroup": {
             "type": "string"
           },
-          "mediaSubGroup": {
+          "MediaSubGroup": {
             "type": "string"
           },
-          "mediaName": {
+          "MediaName": {
             "type": "string"
           },
-           "mediaType": {
+           "MediaType": {
             "type": "string"
           },
-          "fileBytes": {
+          "FileBytes": {
             "type": "string"
           },
-          "externalURL": {
+          "ExternalURL": {
             "type": "string"
           }
         }      
       },
-      "getMediaResponse": {
+      "GetMediaResponse": {
         "type": "object",
         "properties": {
-          "mediaDID": {
+          "MediaDID": {
             "type": "string"
           },
-          "mediaGroup": {
+          "MediaGroup": {
             "type": "string"
           },
-          "mediaSubGroup": {
+          "MediaSubGroup": {
             "type": "string"
           },
-          "mediaName": {
+          "MediaName": {
             "type": "string"
           },
-          "mediaPath": {
+          "MediaPath": {
             "type": "string"
           },
-          "mediaContent": {
+          "MediaContent": {
             "type": "string"
           },
-          "externalURL": {
+          "ExternalURL": {
             "type": "string"
           },
-          "mediaWidth": {
+          "MediaWidth": {
             "type": "integer"
           },
-          "mediaHeight": {
+          "MediaHeight": {
             "type": "integer"
           },
-          "mediaFileSize": {
+          "MediaFileSize": {
             "type": "integer"
           },
-          "mediaType": {
+          "MediaType": {
             "type": "string"
           },        
-          "mediaTotalUsage": {
+          "MediaTotalUsage": {
             "type": "integer"
           }
         }
       },
-      "mediaPostResponse":{
+      "MediaPostResponse":{
         "type": "object",
         "properties": {
           "Errors": {
@@ -376,12 +376,12 @@
           "Results": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/getMediaResponse"
+              "$ref": "#/definitions/GetMediaResponse"
             }
           }
         }      
       },
-      "getAllMediasResponses": {
+      "GetAllMediasResponses": {
         "type": "object",
         "properties": {
           "Errors": {
@@ -393,12 +393,12 @@
           "Results": {
             "type": "array",
             "items": {
-            "$ref": "#/definitions/getMediaResponse"
+            "$ref": "#/definitions/GetMediaResponse"
             }
           }
         }
       },
-      "getOneMediaResponse": {
+      "GetOneMediaResponse": {
         "type": "object",
         "properties": {
           "Errors": {
@@ -410,12 +410,12 @@
           "Results": {
             "type": "array",
             "items": {
-            "$ref": "#/definitions/getMediaResponse"
+            "$ref": "#/definitions/GetMediaResponse"
             }
           }
         }
       },
-      "deleteMediaResponse": {
+      "DeleteMediaResponse": {
         "type": "object",
         "properties": {
           "Errors": {
