@@ -68,12 +68,12 @@
         }
       }
     },
-    "/JobBranding/{ID}": {      
+    "/JobBranding/{DID}": {      
       "put": {
         "tags": [
           "job Branding API"
         ],
-        "summary": "update job branding by ID",
+        "summary": "update job branding by DID",
         "description": "",
         "operationId": "updateJobBranding",
         "consumes": [
@@ -92,7 +92,7 @@
           },
           {
             "in": "path",
-            "name": "ID", 
+            "name": "DID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -115,7 +115,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: jobBrandingDID is required, name is required"
+            "description": "Bad Request: DID is required"
          },
           "404": {
             "description": "Not Found"
@@ -129,13 +129,13 @@
         "tags": [
           "job Branding API"
         ],
-        "summary": "delete job branding by ID",
+        "summary": "delete job branding by DID",
         "description": "",
         "operationId": "deleteJobBranding",
         "parameters": [          
           {
             "in": "path",
-            "name": "ID", 
+            "name": "DID", 
             "default": "",
             "required": true,
             "type": "string"
@@ -185,11 +185,11 @@
       }
     },
     "JobBrandingReqNResObj": {
-      "type": "object",
-      "required": [
-        "Name"
-      ],
+      "type": "object",      
       "properties": {
+        "DID": {
+          "type": "string"
+        },
         "Name": {
           "type": "string"
         },

@@ -53,7 +53,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/MediaPostResponse"
+                "$ref": "#/definitions/GetMediaAPIResponse"
               }
             },
             "400": {
@@ -99,7 +99,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/GetAllMediasResponses"
+                "$ref": "#/definitions/GetMediaAPIResponse"
               }
             },
             "400": {
@@ -114,18 +114,18 @@
           }
         }
       },   
-      "/media/{ID}": {
+      "/media/{DID}": {
         "get": {
           "tags": [
             "Media API"
           ],
-          "summary": "get media by mediaDID",
+          "summary": "get media by DID",
           "description": "",
           "operationId": "GetMedia",
           "parameters": [          
             {
               "in": "path",
-              "name": "ID", 
+              "name": "DID", 
               "default": "",
               "required": true,
               "type": "string"
@@ -138,7 +138,7 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/GetOneMediaResponse"
+                "$ref": "#/definitions/GetMediaAPIResponse"
               }
             },
             "400": {
@@ -156,7 +156,7 @@
           "tags": [
             "Media API"
           ],
-          "summary": "update media by mediaDID",
+          "summary": "update media by DID",
           "description": "",
           "operationId": "updateMedia",
           "consumes": [
@@ -175,7 +175,7 @@
             },
             {
               "in": "path",
-              "name": "ID", 
+              "name": "DID", 
               "default": "",
               "required": true,
               "type": "string"
@@ -186,7 +186,7 @@
               "description": "update media detail",
               "required": true,
               "schema": {
-                "$ref": "#/definitions/MediaUpdateRequest"
+                "$ref": "#/definitions/MediaPostRequest"
               }
             }
           ],
@@ -194,11 +194,11 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/GetOneMediaResponse"
+                "$ref": "#/definitions/GetMediaAPIResponse"
               }
             },
             "400": {
-              "description": "Bad Request: mediaDID is required, SubGroupDID is required, mediaName is required"
+              "description": "Bad Request: DID is required, SubGroupDID is required, MediaName is required"
            },
             "404": {
               "description": "Not Found"
@@ -212,13 +212,13 @@
           "tags": [
             "Media API"
           ],
-          "summary": "delete media by mediaDID",
+          "summary": "delete media by DID",
           "description": "",
           "operationId": "deleteMedia",
           "parameters": [          
             {
               "in": "path",
-              "name": "ID", 
+              "name": "DID", 
               "default": "",
               "required": true,
               "type": "string"
@@ -235,7 +235,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: Fail to get media data"
+              "description": "Bad Request: Fail to delete media"
             },
             "404": {
               "description": "Not Found"
@@ -258,34 +258,7 @@
             "type": "string"
           }
         } 
-      },
-      "MediaUpdateRequest": {
-        "type": "object",
-        "required": [
-          "MediaGroup",
-          "MediaSubGroup"
-        ],
-        "properties": {        
-          "MediaGroup": {
-            "type": "string"
-          },
-          "MediaSubGroup": {
-            "type": "string"
-          },
-          "MediaName": {
-            "type": "string"
-          },
-          "MediaType": {
-            "type": "string"
-          },
-          "FileBytes": {
-            "type": "string"
-          },
-          "ExternalURL": {
-            "type": "string"
-          }
-        }      
-      },
+      },      
       "MediaPostRequest": {
         "type": "object",
         "required": [
@@ -294,6 +267,9 @@
           "MediaName"
         ],
         "properties": {
+          "DID": {
+            "type": "string"
+          },
           "MediaGroup": {
             "type": "string"
           },
@@ -317,7 +293,7 @@
       "GetMediaResponse": {
         "type": "object",
         "properties": {
-          "MediaDID": {
+          "DID": {
             "type": "string"
           },
           "MediaGroup": {
@@ -355,41 +331,7 @@
           }
         }
       },
-      "MediaPostResponse":{
-        "type": "object",
-        "properties": {
-          "Errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "Results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/GetMediaResponse"
-            }
-          }
-        }      
-      },
-      "GetAllMediasResponses": {
-        "type": "object",
-        "properties": {
-          "Errors": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },        
-          "Results": {
-            "type": "array",
-            "items": {
-            "$ref": "#/definitions/GetMediaResponse"
-            }
-          }
-        }
-      },
-      "GetOneMediaResponse": {
+      "GetMediaAPIResponse": {
         "type": "object",
         "properties": {
           "Errors": {
