@@ -256,16 +256,7 @@
           },
           "MediaSubGroup": {
             "type": "string"
-          },
-          "pageNo": {
-            "type": "number"
-          },
-          "pageSize": {
-            "type": "number"
-          },
-          "sortBy": {
-            "type": "string"
-          }      
+          }
         } 
       },
       "MediaUpdateRequest": {
