@@ -42,7 +42,7 @@
             {
               "in": "body",
               "name": "body",
-              "description": "update media detail",
+              "description": "add new media detail",
               "required": true,
               "schema": {
                 "$ref": "#/definitions/MediaPostRequest"
@@ -53,11 +53,11 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/GetMediaAPIResponse"
+                "$ref": "#/definitions/UpdateMediaAPIResponse"
               }
             },
             "400": {
-              "description": "Bad Request: SubGroupDID is required, mediaName is required"
+              "description": "Bad Request: mediaName is required"
            },
             "404": {
               "description": "Not Found"
@@ -103,7 +103,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: Fail to get media data"
+              "description": "Bad Request: MediaGroup is required"
             },
             "404": {
               "description": "Not Found"
@@ -114,18 +114,18 @@
           }
         }
       },   
-      "/media/{DID}": {
+      "/media/{id}": {
         "get": {
           "tags": [
             "Media API"
           ],
-          "summary": "get media by DID",
+          "summary": "get media by id",
           "description": "",
           "operationId": "GetMedia",
           "parameters": [          
             {
               "in": "path",
-              "name": "DID", 
+              "name": "id", 
               "default": "",
               "required": true,
               "type": "string"
@@ -142,7 +142,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: Fail to get media data"
+              "description": "Bad Request: media id is required"
             },
             "404": {
               "description": "Not Found"
@@ -156,7 +156,7 @@
           "tags": [
             "Media API"
           ],
-          "summary": "update media by DID",
+          "summary": "update media by id",
           "description": "",
           "operationId": "updateMedia",
           "consumes": [
@@ -175,7 +175,7 @@
             },
             {
               "in": "path",
-              "name": "DID", 
+              "name": "id", 
               "default": "",
               "required": true,
               "type": "string"
@@ -194,11 +194,11 @@
             "200": {
               "description": "successful operation",
               "schema": {
-                "$ref": "#/definitions/GetMediaAPIResponse"
+                "$ref": "#/definitions/UpdateMediaAPIResponse"
               }
             },
             "400": {
-              "description": "Bad Request: DID is required, SubGroupDID is required, MediaName is required"
+              "description": "Bad Request: media id is required"
            },
             "404": {
               "description": "Not Found"
@@ -212,13 +212,13 @@
           "tags": [
             "Media API"
           ],
-          "summary": "delete media by DID",
+          "summary": "delete media by id",
           "description": "",
           "operationId": "deleteMedia",
           "parameters": [          
             {
               "in": "path",
-              "name": "DID", 
+              "name": "id", 
               "default": "",
               "required": true,
               "type": "string"
@@ -235,7 +235,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: Fail to delete media"
+              "description": "Bad Request: media id is required"
             },
             "404": {
               "description": "Not Found"
@@ -252,10 +252,12 @@
         "type": "object",      
         "properties": {
           "MediaGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"BrandBuilder"
           },
           "MediaSubGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"Brandbuilder Header"
           }
         } 
       },      
@@ -267,52 +269,54 @@
           "MediaName"
         ],
         "properties": {
-          "DID": {
-            "type": "string"
-          },
           "MediaGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"BrandBuilder"
           },
           "MediaSubGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"Brandbuilder Header"
           },
           "MediaName": {
-            "type": "string"
-          },
-           "MediaType": {
-            "type": "string"
+            "type": "string",
+            "example":"Header.jpg"
           },
           "FileBytes": {
-            "type": "string"
+            "type": "string",
+            "example":"0x47494638396102037200F70000AD9A899CBDCECA8757B9CCDAE9D9"
           },
           "ExternalURL": {
-            "type": "string"
+            "type": "string",
+            "example":""
           }
         }      
       },
       "GetMediaResponse": {
         "type": "object",
         "properties": {
-          "DID": {
-            "type": "string"
+          "Id": {
+            "type": "string",
+            "example":"IM221Q5XM1W9TXWFMNN"
           },
           "MediaGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"BrandBuilder"
           },
           "MediaSubGroup": {
-            "type": "string"
+            "type": "string",
+            "example":"Brandbuilder Header"
           },
           "MediaName": {
-            "type": "string"
+            "type": "string",
+            "example":"IM221Q5XM1W9TXWFMNN"
           },
           "MediaPath": {
-            "type": "string"
-          },
-          "MediaContent": {
-            "type": "string"
+            "type": "string",
+            "example":"/MediaManagement/TD/IM221Q5XM1W9TXWFMNN.gif"
           },
           "ExternalURL": {
-            "type": "string"
+            "type": "string",
+            "example":""
           },
           "MediaWidth": {
             "type": "integer"
@@ -324,10 +328,20 @@
             "type": "integer"
           },
           "MediaType": {
-            "type": "string"
+            "type": "string",
+            "example":".gif"
           },        
           "MediaTotalUsage": {
             "type": "integer"
+          }
+        }
+      },
+      "MediaUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "example":"IM221Q5XM1W9TXWFMNN"
           }
         }
       },
@@ -337,13 +351,32 @@
           "Errors": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "example": ""
             }
           },
           "Results": {
             "type": "array",
             "items": {
             "$ref": "#/definitions/GetMediaResponse"
+            }
+          }
+        }
+      },
+      "UpdateMediaAPIResponse": {
+        "type": "object",
+        "properties": {
+          "Errors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": ""
+            }
+          },
+          "Results": {
+            "type": "array",
+            "items": {
+            "$ref": "#/definitions/MediaUpdateResponse"
             }
           }
         }
@@ -355,7 +388,8 @@
             "type": "array",
             "items":
             {
-              "type": "string"
+              "type": "string",
+              "example": ""
             }
           },
           "Results": {
