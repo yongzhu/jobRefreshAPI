@@ -3,14 +3,14 @@
   "info": {
     "description": "for all following APIs, it should add 2 parameters at API request header before calling API: X_PROXY_SECRET_TOKEN and AUTHORIZATION, all APIs retrieve current accountDID and UserDID from AUTHORIZATION",
     "version": "1.0.0",
-    "title": "job Branding API"
+    "title": "job branding API"
   },
   "host": "api.careerbuilder.com",
-  "basePath": "/corporate/jobposterapi/JobBranding",
+  "basePath": "/corporate/jobposterapi/jobbrandings",
   "tags": [
     {
-      "name": "job Branding API",
-      "description": "job Branding API"
+      "name": "job branding API",
+      "description": "job branding API"
     }
   ],
   "schemes": [
@@ -20,7 +20,7 @@
     "/jobbrandings": {
       "post": {
         "tags": [
-          "job Branding API"
+          "job branding API"
         ],
         "summary": "add new job branding",
         "description": "",
@@ -50,7 +50,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/UpdateJobBrandingResponse"
@@ -71,9 +71,9 @@
     "/jobbrandings/{id}": {      
       "put": {
         "tags": [
-          "job Branding API"
+          "job branding API"
         ],
-        "summary": "update job branding by ID",
+        "summary": "update job branding by id",
         "description": "",
         "operationId": "updateJobBranding",
         "consumes": [
@@ -108,15 +108,12 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/UpdateJobBrandingResponse"
-            }
+          "204": {
+            "description": "successful operation"
           },
           "400": {
             "description": "Bad Request: job branding Id is required"
-         },
+          },
           "404": {
             "description": "Not Found"
           },
@@ -127,7 +124,7 @@
       },
       "delete": {
         "tags": [
-          "job Branding API"
+          "job branding API"
         ],
         "summary": "delete job branding by id",
         "description": "",
