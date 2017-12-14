@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: job branding name is required"
+            "description": "Bad Request: Name is required"
          },
           "404": {
             "description": "Not Found"
@@ -112,7 +112,7 @@
             "description": "successful operation"
           },
           "400": {
-            "description": "Bad Request: job branding Id is required"
+            "description": "Bad Request: Name is required"
           },
           "404": {
             "description": "Not Found"
@@ -147,9 +147,6 @@
             "schema": {
               "$ref": "#/definitions/DeleteJobBrandingResponse"
             }
-          },
-          "400": {
-            "description": "Bad Request: job branding Id is required"
           },
           "404": {
             "description": "Not Found"
