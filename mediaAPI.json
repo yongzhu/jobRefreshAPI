@@ -3,24 +3,24 @@
     "info": {
       "description": "for all following APIs, it should add 2 parameters at API request header before calling API: X_PROXY_SECRET_TOKEN and AUTHORIZATION, all APIs retrieve current accountDID and UserDID from AUTHORIZATION",
       "version": "1.0.0",
-      "title": "Media API"
+      "title": "media API"
     },
     "host": "api.careerbuilder.com",
-    "basePath": "/corporate/jobposterapi/media",
+    "basePath": "/corporate/jobposterapi/medias",
     "tags": [
       {
-        "name": "Media API",
-        "description": "Media API"
+        "name": "media API",
+        "description": "media API"
       }
     ],
     "schemes": [
       "http"
     ],
     "paths": {
-      "/media": {
+      "/medias": {
         "post": {
           "tags": [
-            "Media API"
+            "media API"
           ],
           "summary": "add new media",
           "description": "",
@@ -50,14 +50,14 @@
             }
           ],
           "responses": {
-            "200": {
+            "201": {
               "description": "successful operation",
               "schema": {
                 "$ref": "#/definitions/UpdateMediaAPIResponse"
               }
             },
             "400": {
-              "description": "Bad Request: mediaName is required"
+              "description": "Bad Request: MediaName is required"
            },
             "404": {
               "description": "Not Found"
@@ -69,7 +69,7 @@
         },
         "get": {
           "tags": [
-            "Media API"
+            "media API"
           ],
           "summary": "get medias by group",
           "description": "",
@@ -114,10 +114,10 @@
           }
         }
       },   
-      "/media/{id}": {
+      "/medias/{id}": {
         "get": {
           "tags": [
-            "Media API"
+            "media API"
           ],
           "summary": "get media by id",
           "description": "",
@@ -141,9 +141,6 @@
                 "$ref": "#/definitions/GetMediaAPIResponse"
               }
             },
-            "400": {
-              "description": "Bad Request: media id is required"
-            },
             "404": {
               "description": "Not Found"
             },
@@ -154,7 +151,7 @@
         },
         "put": {
           "tags": [
-            "Media API"
+            "media API"
           ],
           "summary": "update media by id",
           "description": "",
@@ -191,15 +188,12 @@
             }
           ],
           "responses": {
-            "200": {
-              "description": "successful operation",
-              "schema": {
-                "$ref": "#/definitions/UpdateMediaAPIResponse"
-              }
+            "204": {
+              "description": "successful operation"
             },
             "400": {
-              "description": "Bad Request: media id is required"
-           },
+              "description": "Bad Request: MediaGroup is required"
+            },
             "404": {
               "description": "Not Found"
             },
@@ -210,7 +204,7 @@
         },
         "delete": {
           "tags": [
-            "Media API"
+            "media API"
           ],
           "summary": "delete media by id",
           "description": "",
@@ -233,9 +227,6 @@
               "schema": {
                 "$ref": "#/definitions/DeleteMediaResponse"
               }
-            },
-            "400": {
-              "description": "Bad Request: media id is required"
             },
             "404": {
               "description": "Not Found"
