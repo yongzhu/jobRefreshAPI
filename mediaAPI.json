@@ -6,7 +6,7 @@
       "title": "media API"
     },
     "host": "api.careerbuilder.com",
-    "basePath": "/corporate/jobposterapi/medias",
+    "basePath": "/corporate/jobposterapi/media",
     "tags": [
       {
         "name": "media API",
@@ -17,7 +17,7 @@
       "http"
     ],
     "paths": {
-      "/medias": {
+      "/media": {
         "post": {
           "tags": [
             "media API"
@@ -71,9 +71,9 @@
           "tags": [
             "media API"
           ],
-          "summary": "get medias by group",
+          "summary": "get media by group",
           "description": "",
-          "operationId": "GetAllMedias",
+          "operationId": "GetAllmedia",
           "parameters": [
             {
               "in": "header",
@@ -114,7 +114,7 @@
           }
         }
       },   
-      "/medias/{id}": {
+      "/media/{id}": {
         "get": {
           "tags": [
             "media API"
