@@ -68,8 +68,8 @@
         }
       }
     },
-    "/jobbrandings/{id}": {      
-      "put": {
+    "/jobbrandings/update": {      
+      "post": {
         "tags": [
           "job branding API"
         ],
@@ -89,27 +89,23 @@
             "default": "application/json",
             "required": true,
             "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id", 
-            "default": "",
-            "required": true,
-            "type": "string"
-          },
+          },         
           {
             "in": "body",
             "name": "body",
             "description": "update job branding detail",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/JobBrandingReqObj"
+              "$ref": "#/definitions/JobBrandingUpdateReqObj"
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "successful operation"
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/UpdateJobBrandingResponse"
+            }
           },
           "400": {
             "description": "Bad Request: Name is required"
@@ -121,8 +117,10 @@
             "description": "Internal Server Error"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/jobbrandings/delete": {      
+      "post": {
         "tags": [
           "job branding API"
         ],
@@ -131,18 +129,20 @@
         "operationId": "deleteJobBranding",
         "parameters": [          
           {
-            "in": "path",
-            "name": "id", 
-            "default": "",
+            "in": "body",
+            "name": "body",
+            "description": "update job branding detail",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/JobBrandingDeleteReqObj"
+            }
           }
         ],
         "produces": [
           "application/json"
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/DeleteJobBrandingResponse"
@@ -181,10 +181,18 @@
     },
     "JobBrandingUpdateResponse": {
       "type": "object",      
-      "properties": {
+      "properties": {        
         "Id": {
           "type": "string",
           "example":"JB3P4JN60NPQRQSLCVMT"
+        },
+        "Name": {
+          "type": "string",
+          "example":"Consortium Pte Ltd"
+        },
+        "Status": {
+          "type": "string",
+          "example":"Active"
         }
       }
     },
@@ -196,11 +204,9 @@
           "example": "Consortium Pte Ltd"
         },
         "Type": {
-          "type": "number"
-        },
-        "Status": {
-          "type": "boolean"
-        },
+          "type": "string",
+          "example": "Premium"
+        },       
         "Tracking": {
           "type": "string",
           "example": "<IMG SRC='https://pubads.g.doubleclick.net/activity;xsp=4326694;ord=1?' BORDER=0 WIDTH=1 HEIGHT=1 ALT='Advertisement'/>"
@@ -215,10 +221,7 @@
             "Header": {
               "type": "string",
               "example": "http://img.icbdr.com/MediaManagement/T3/MWM1686LRCMFY24JRT3.jpg"
-            },
-            "HeaderType": {
-              "type": "number"
-            },
+            },           
             "TabletBanner": {
               "type": "string",
               "example": "http://img.icbdr.com/MediaManagement/W5/MWR45K6Z3FVNVMCQMW5.jpg"
@@ -236,263 +239,8 @@
               "example": "5371882024001"
             },
             "IsMultiVideo": {
-              "type": "boolean"
-            }
-          }
-        },
-        "Sections": {
-          "type": "object",
-          "properties": {
-            "CompanyInfo": {
-              "type": "object",
-              "properties": {
-                "Section1": {
-                  "type": "number"
-                },
-                "Section2": {
-                  "type": "number"
-                },
-                "Section3": {
-                  "type": "number"
-                }
-              }
-            },
-            "JobDetails": {
-              "type": "object",
-              "properties": {
-                "Description": {
-                  "type": "number"
-                },
-                "Requirements": {
-                  "type": "number"
-                },
-                "Snapshot": {
-                  "type": "number"
-                }
-              }
-            }
-          }
-        },
-        "Styles": {
-          "type": "object",
-          "properties": {
-            "Page": {
-              "type": "object",
-              "properties": {
-                "BackgroundImage": {
-                  "type": "string",
-                  "example": "http://img.icbdr.com/MediaManagement/6K/M8Z19W6R17B667Y2J6K.jpg"
-                },
-                "BackgroundColor": {
-                  "type": "string",
-                  "example": "FFFFFF"
-                },
-                "BackgroundGradient": {
-                  "type": "object",
-                  "properties":{
-                    "Orientation": {
-                      "type": "string",
-                      "example": "Horizontal"
-                    }
-                  } 
-                }
-              }
-            },
-            "JobDetails": {
-              "type": "object",
-              "properties": {
-                "Container":{
-                  "type": "object",
-                  "properties": {
-                    "BorderColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "BorderRadius": {
-                      "type": "number"
-                    },
-                    "BorderSize": {
-                      "type": "number"
-                    }
-                  }
-                },
-                "Content":{
-                  "type": "object",
-                  "properties": {
-                    "FontColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "FontSize": {
-                      "type": "number"
-                    },
-                    "FontStyle": {
-                      "type": "string",
-                      "example": "Arial"
-                    }
-                  }
-                },
-                "Headings":{
-                  "type": "object",
-                  "properties": {
-                    "FontColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "FontSize": {
-                      "type": "number"
-                    },
-                    "FontStyle": {
-                      "type": "string",
-                      "example": "Arial"
-                    }
-                  }
-                }
-                ,
-                "Title":{
-                  "type": "object",
-                  "properties": {
-                    "BorderColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "BorderRadius": {
-                      "type": "number"
-                    },
-                    "BorderSize": {
-                      "type": "number"
-                    }
-                  }
-                }
-              }
-            },
-            "CompanyInfo": {
-              "type": "object",
-              "properties": {
-                "CompanyOverview":{
-                  "type": "object",
-                  "properties": {
-                    "OverviewHeader":{
-                      "type": "object",
-                      "properties":{
-                        "FontColor": {
-                          "type": "string",
-                          "example": "#FFFFFF"
-                        },
-                        "BackgroundColor": {
-                          "type": "string",
-                          "example": "#DF691E"
-                        },
-                        "BottomLineColor": {
-                          "type": "string",
-                          "example": "#2D52A2"
-                        },
-                        "FontStyle": {
-                          "type": "string",
-                          "example": "Arial"
-                        }                        
-                      }
-                    },
-                    "OverviewBackground":{
-                      "type": "object",
-                      "properties":{
-                        "BackgroundImage": {
-                          "type": "string",
-                          "example":""
-                        },
-                        "BackgroundColor": {
-                          "type": "string",
-                          "example": "#FFFFFF"
-                        }                     
-                      }
-                    }
-                  }
-                },
-                "Buttons":{
-                  "type": "object",
-                  "properties":{
-                    "BackgroundColor": {
-                      "type": "string",
-                      "example": "#0252A2"
-                    },
-                    "BorderColor": {
-                      "type": "string",
-                      "example": "#0252A2"
-                    },
-                    "BorderSize": {
-                      "type": "number"
-                    },
-                    "FontColor": {
-                      "type": "string",
-                      "example": "#FFFFFF"
-                    },
-                    "FontStyle": {
-                      "type": "string",
-                      "example": "Arial"
-                    }    
-                  }
-                },
-                "Container":{
-                  "type": "object",
-                  "properties": {
-                    "BackgroundColor": {
-                      "type": "string",
-                      "example": "#FFFFFF"
-                    },
-                    "BackgroundGradient": {
-                      "type": "object",
-                      "properties":{
-                        "Orientation": {
-                          "type": "string",
-                          "example": "Horizontal"
-                        }
-                      } 
-                    },
-                    "BorderColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "BorderRadius": {
-                      "type": "number"
-                    },
-                    "BorderSize": {
-                      "type": "number"
-                    }    
-                  }
-                },
-                "Content":{
-                  "type": "object",
-                  "properties":{
-                    "FontColor": {
-                      "type": "string",
-                      "example":"#000000"
-                    },
-                    "FontSize": {
-                      "type": "number"
-                    },
-                    "FontStyle": {
-                      "type": "string",
-                      "example": "Arial"
-                    }    
-                  }
-                },
-                "Headings":{
-                 "type": "object",
-                 "properties": {
-                    "FontColor": {
-                      "type": "string",
-                      "example": "#000000"
-                    },
-                    "FontSize": {
-                      "type": "number"
-                    },
-                    "FontStyle": {
-                      "type": "string",
-                      "example": "Arial"
-                    }    
-                  } 
-                }
-              }
+              "type": "string",
+              "example": "True"
             }
           }
         },
@@ -503,9 +251,85 @@
               "type": "string",
               "example": "noodlesandcompany"
             },
-            "Glassdoor": {
+            "LinkedIn": {
               "type": "string",
-              "example":""
+              "example": "company/medzed-llc"
+            },
+            "Twitter": {
+              "type": "string",
+              "example": "BauerGroup"
+            }
+          }
+        }
+      }      
+    },
+    "JobBrandingDeleteReqObj":{
+      "type": "object",      
+      "properties": {    
+        "Id": {
+          "type": "string",
+          "example": "JB003915W0SFVW32RXQ4"
+        }
+      }
+    },
+    "JobBrandingUpdateReqObj": {
+      "type": "object",      
+      "properties": {    
+        "Id": {
+          "type": "string",
+          "example": "JB003915W0SFVW32RXQ4"
+        },    
+        "Name": {
+          "type": "string",
+          "example": "Consortium Pte Ltd"
+        },
+        "Type": {
+          "type": "string",
+          "example": "Premium"
+        },       
+        "Tracking": {
+          "type": "string",
+          "example": "<IMG SRC='https://pubads.g.doubleclick.net/activity;xsp=4326694;ord=1?' BORDER=0 WIDTH=1 HEIGHT=1 ALT='Advertisement'/>"
+        },
+        "CompanyDescription": {
+          "type": "string",
+          "example": "this firm has specialized in feasibility studies for the design of the industrial parks as well as industrial land utilization. AC Consortium Pte Ltd has been actively involved in the comprehensive design of numerous industrial buildings catering to many different trades in the manufacturing and fabrication sector."
+        },
+        "Media": {
+          "type": "object",
+          "properties": {
+            "Header": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/T3/MWM1686LRCMFY24JRT3.jpg"
+            },           
+            "TabletBanner": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/W5/MWR45K6Z3FVNVMCQMW5.jpg"
+            },
+            "MobileLogo": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/H9/MXK36Z6XLWFD1R28NH9.jpg"
+            },
+            "Footer": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/0S/MWD5VH62PNDFGGX4Z0S.jpg"
+            },
+            "Video": {
+              "type": "string",
+              "example": "5371882024001"
+            },
+            "IsMultiVideo": {
+              "type": "string",
+              "example": "True"
+            }
+          }
+        },
+        "Widgets" :{
+          "type": "object",
+          "properties": {
+            "Facebook": {
+              "type": "string",
+              "example": "noodlesandcompany"
             },
             "LinkedIn": {
               "type": "string",
@@ -514,10 +338,7 @@
             "Twitter": {
               "type": "string",
               "example": "BauerGroup"
-            },
-            "ShowWidgets": {
-              "type": "boolean"
-            }  
+            }
           }
         }
       }      
