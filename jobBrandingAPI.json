@@ -50,7 +50,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/UpdateJobBrandingResponse"
@@ -101,7 +101,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/UpdateJobBrandingResponse"
@@ -118,74 +118,9 @@
           }
         }
       }
-    },
-    "/jobbrandings/delete": {      
-      "post": {
-        "tags": [
-          "job branding API"
-        ],
-        "summary": "delete job branding by id",
-        "description": "",
-        "operationId": "deleteJobBranding",
-        "parameters": [  
-          {
-            "in": "header",
-            "name": "Content-Type",
-            "default": "application/json",
-            "required": true,
-            "type": "string"
-          },            
-          {
-            "in": "body",
-            "name": "body",
-            "description": "delete job branding detail",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/JobBrandingDeleteReqObj"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "201": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/DeleteJobBrandingResponse"
-            }
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
     }
   },
   "definitions": {
-    "DeleteJobBrandingResponse": {
-      "type": "object",
-      "properties": {
-        "Errors": {
-          "type": "array",
-          "items":
-          {
-            "type": "string",
-            "example": ""
-          }
-        },
-        "Results": {
-          "type": "array",
-          "items":
-          {
-            "type": "boolean"
-          }
-        }
-      }
-    },
     "JobBrandingUpdateResponse": {
       "type": "object",      
       "properties": {        
@@ -270,15 +205,6 @@
         }
       }      
     },
-    "JobBrandingDeleteReqObj":{
-      "type": "object",      
-      "properties": {    
-        "Id": {
-          "type": "string",
-          "example": "JB003915W0SFVW32RXQ4"
-        }
-      }
-    },
     "JobBrandingUpdateReqObj": {
       "type": "object",      
       "properties": {    
@@ -293,7 +219,11 @@
         "Type": {
           "type": "string",
           "example": "Premium"
-        },       
+        },   
+        "Status": {
+          "type": "string",
+          "example": "Active"
+        },     
         "Tracking": {
           "type": "string",
           "example": "<IMG SRC='https://pubads.g.doubleclick.net/activity;xsp=4326694;ord=1?' BORDER=0 WIDTH=1 HEIGHT=1 ALT='Advertisement'/>"
