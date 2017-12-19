@@ -138,7 +138,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "update job branding detail",
+            "description": "delete job branding detail",
             "required": true,
             "schema": {
               "$ref": "#/definitions/JobBrandingDeleteReqObj"
