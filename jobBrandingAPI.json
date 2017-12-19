@@ -127,7 +127,14 @@
         "summary": "delete job branding by id",
         "description": "",
         "operationId": "deleteJobBranding",
-        "parameters": [          
+        "parameters": [  
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "default": "application/json",
+            "required": true,
+            "type": "string"
+          },            
           {
             "in": "body",
             "name": "body",
