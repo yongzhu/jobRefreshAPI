@@ -217,7 +217,7 @@
           "example": "Active",
           "enum": [
             "Active",
-            "Inactive",
+            "Deactivate",
             "Delete"
           ]
         },     
