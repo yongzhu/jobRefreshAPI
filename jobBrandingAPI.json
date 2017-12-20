@@ -214,7 +214,12 @@
         },   
         "Status": {
           "type": "string",
-          "example": "Active"
+          "example": "Active",
+          "enum": [
+            "Active",
+            "Inactive",
+            "Delete"
+          ]
         },     
         "Tracking": {
           "type": "string",
