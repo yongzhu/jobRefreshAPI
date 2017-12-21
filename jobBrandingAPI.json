@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required"
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium"
          },
           "404": {
             "description": "Not Found"
@@ -108,7 +108,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required"
+            "description": "Bad Request: Id is requied, Name is required，Type is required, Type should be Standard or Premium, Status is required, Status should be Active or Deactive or Delete"
           },
           "404": {
             "description": "Not Found"
@@ -139,7 +139,11 @@
         },
         "Type": {
           "type": "string",
-          "example": "Premium"
+          "example": "Premium",
+          "enum": [
+            "Standard",
+            "Premium"
+          ]
         },       
         "Tracking": {
           "type": "string",
@@ -174,7 +178,11 @@
             },
             "IsMultiVideo": {
               "type": "string",
-              "example": "True"
+              "example": "False",
+              "enum": [
+                "True",
+                "False"
+              ]
             }
           }
         },
@@ -210,7 +218,11 @@
         },
         "Type": {
           "type": "string",
-          "example": "Premium"
+          "example": "Premium",
+          "enum": [
+            "Standard",
+            "Premium"
+          ]
         },   
         "Status": {
           "type": "string",
@@ -254,7 +266,11 @@
             },
             "IsMultiVideo": {
               "type": "string",
-              "example": "True"
+              "example": "False",
+              "enum": [
+                "True",
+                "False"
+              ]
             }
           }
         },
