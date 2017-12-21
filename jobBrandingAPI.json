@@ -57,7 +57,10 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium"
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium",
+            "schema": {
+              "$ref": "#/definitions/Err400JobBrandingResponse"
+            }
          },
           "404": {
             "description": "Not Found"
@@ -108,7 +111,10 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, Name is required，Type is required, Type should be Standard or Premium, Status is required, Status should be Active or Deactive or Delete"
+            "description": "Bad Request: Id is requied, Name is required，Type is required, Type should be Standard or Premium, Status is required, Status should be Active or Deactive or Delete",
+            "schema": {
+              "$ref": "#/definitions/Err400JobBrandingResponse"
+            }
           },
           "404": {
             "description": "Not Found"
@@ -129,7 +135,7 @@
           "example":"JB3P4JN60NPQRQSLCVMT"
         }
       }
-    },
+    },   
     "JobBrandingReqObj": {
       "type": "object",      
       "properties": {        
@@ -292,6 +298,25 @@
           }
         }
       }      
+    },
+    "Err400JobBrandingResponse": {
+      "type": "object",
+      "properties": {
+        "Errors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "Bad Request: Name is required"
+          }
+        },
+        "Results": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": ""
+          }         
+        }
+      }
     },
     "EditJobBrandingResponse": {
       "type": "object",
