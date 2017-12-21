@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -111,7 +111,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, Name is required，Type is required, Type should be Standard or Premium, Status is required, Status should be Active or Deactive or Delete",
+            "description": "Bad Request: Id is requied, Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
