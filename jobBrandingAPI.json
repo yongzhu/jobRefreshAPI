@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard, Media IsMultiVideo should be False or True",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -111,7 +111,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard, Media IsMultiVideo should be False or True, Status is required, Status should be Active or Deactive or Delete",
+            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -181,15 +181,7 @@
             "Video": {
               "type": "string",
               "example": "5371882024001"
-            },
-            "IsMultiVideo": {
-              "type": "string",
-              "example": "False",
-              "enum": [
-                "True",
-                "False"
-              ]
-            }
+            }            
           }
         },
         "Widgets" :{
@@ -269,14 +261,6 @@
             "Video": {
               "type": "string",
               "example": "5371882024001"
-            },
-            "IsMultiVideo": {
-              "type": "string",
-              "example": "False",
-              "enum": [
-                "True",
-                "False"
-              ]
             }
           }
         },
