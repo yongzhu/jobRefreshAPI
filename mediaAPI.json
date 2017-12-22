@@ -276,7 +276,7 @@
             "type": "string",
             "example":"0x47494638396102037200F70000AD9A899CBDCECA8757B9CCDAE9D9"
           },
-          "ExternalURL": {
+          "ExternalUrl": {
             "type": "string",
             "example":""
           }
@@ -305,7 +305,7 @@
             "type": "string",
             "example":"/MediaManagement/TD/IM221Q5XM1W9TXWFMNN.gif"
           },
-          "ExternalURL": {
+          "ExternalUrl": {
             "type": "string",
             "example":""
           },
