@@ -111,7 +111,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
+            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Type can't upgrade to Premium since Premium branding isn't availabe, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
