@@ -288,15 +288,7 @@
           "Id": {
             "type": "string",
             "example":"IM221Q5XM1W9TXWFMNN"
-          },
-          "MediaGroup": {
-            "type": "string",
-            "example":"BrandBuilder"
-          },
-          "MediaSubGroup": {
-            "type": "string",
-            "example":"Brandbuilder Header"
-          },
+          },         
           "MediaName": {
             "type": "string",
             "example":"IM221Q5XM1W9TXWFMNN"
