@@ -241,14 +241,10 @@
     "definitions": {   
       "MediaLoadCritRequest":{
         "type": "object",      
-        "properties": {
-          "MediaGroup": {
+        "properties": {         
+          "SubGroupId": {
             "type": "string",
-            "example":"BrandBuilder"
-          },
-          "MediaSubGroup": {
-            "type": "string",
-            "example":"Brandbuilder Header"
+            "example":"10"
           }
         } 
       },      
