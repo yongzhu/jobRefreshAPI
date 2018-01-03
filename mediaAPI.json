@@ -17,7 +17,7 @@
       "http"
     ],
     "paths": {
-      "/media": {
+      "/": {
         "post": {
           "tags": [
             "media API"
@@ -38,7 +38,7 @@
               "default": "application/json",
               "required": true,
               "type": "string"
-            },
+            },            
             {
               "in": "body",
               "name": "body",
@@ -74,22 +74,13 @@
           "summary": "get media by group",
           "description": "",
           "operationId": "GetAllmedia",
-          "parameters": [
+          "parameters": [            
             {
-              "in": "header",
-              "name": "Content-Type",
-              "default": "application/json",
+              "in": "query",
+              "name": "mediaSubGroupDid", 
+              "default": "",
               "required": true,
               "type": "string"
-            },
-            {
-              "in": "body",
-              "name": "body",
-              "description": "criteria for loading media",
-              "required": true,
-              "schema": {
-                "$ref": "#/definitions/MediaLoadCritRequest"
-              }
             }
           ],
           "produces": [
@@ -114,7 +105,7 @@
           }
         }
       },   
-      "/media/{id}": {
+      "/{id}": {
         "get": {
           "tags": [
             "media API"
@@ -238,43 +229,28 @@
         }
       }
     },
-    "definitions": {   
-      "MediaLoadCritRequest":{
-        "type": "object",      
-        "properties": {         
-          "SubGroupId": {
-            "type": "string",
-            "example":"10"
-          }
-        } 
-      },      
+    "definitions": { 
       "MediaPostRequest": {
         "type": "object",
         "required": [
-          "MediaGroup",
-          "MediaSubGroup",
-          "MediaName"
+          "FileName"
         ],
         "properties": {
-          "MediaGroup": {
+          "FileName": {
             "type": "string",
-            "example":"BrandBuilder"
+            "example":"demo.jpg"
           },
-          "MediaSubGroup": {
-            "type": "string",
-            "example":"Brandbuilder Header"
-          },
-          "MediaName": {
-            "type": "string",
-            "example":"Header.jpg"
-          },
+          "GroupDID": {
+            "type": "number",
+            "example":"2"
+          },  
+          "SubGroupDID": {
+            "type": "number",
+            "example":"2"
+          },         
           "FileBytes": {
             "type": "string",
             "example":"0x47494638396102037200F70000AD9A899CBDCECA8757B9CCDAE9D9"
-          },
-          "ExternalUrl": {
-            "type": "string",
-            "example":""
           }
         }      
       },
@@ -321,6 +297,10 @@
           "Id": {
             "type": "string",
             "example":"IM221Q5XM1W9TXWFMNN"
+          },
+          "FileName": {
+            "type": "string",
+            "example":"demo.jpg"
           }
         }
       },
