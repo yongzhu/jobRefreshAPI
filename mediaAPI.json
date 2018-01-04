@@ -57,7 +57,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: MediaName is required"
+              "description": "Bad Request: FileName is required. Image type should be jpeg.jpg.png. SubGroupDID should be number. FileBytes is required. Image height exceeds the maximum allowable height. Image width exceeds the maximum allowable width"
            },
             "404": {
               "description": "Not Found"
@@ -94,7 +94,7 @@
               }
             },
             "400": {
-              "description": "Bad Request: MediaGroup is required"
+              "description": "Bad Request: mediaSubGroupDid does not exist."
             },
             "404": {
               "description": "Not Found"
@@ -131,6 +131,9 @@
               "schema": {
                 "$ref": "#/definitions/GetMediaAPIResponse"
               }
+            },
+            "400": {
+              "description": "Bad Request: Id is required to get media. Error Id, there is no media related to this Id. This media does not belong to the user."
             },
             "404": {
               "description": "Not Found"
