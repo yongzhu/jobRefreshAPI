@@ -45,7 +45,7 @@
             "description": "add new job branding",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/JobBrandingCreateReqObj"
+              "$ref": "#/definitions/JobBrandingReqObj"
             }
           }
         ],
@@ -57,7 +57,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Vidoe branding isn't available, Media Header shouldn't be flash if Type is Standard",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -136,7 +136,7 @@
         }
       }
     },   
-    "JobBrandingCreateReqObj": {
+    "JobBrandingReqObj": {
       "type": "object",      
       "properties": { 
         "Name": {
@@ -150,6 +150,52 @@
             "Standard",
             "Premium"
           ]
+        },
+        "Tracking": {
+          "type": "string",
+          "example": "<IMG SRC='https://pubads.g.doubleclick.net/activity;xsp=4326694;ord=1?' BORDER=0 WIDTH=1 HEIGHT=1 ALT='Advertisement'/>"
+        },
+        "CompanyDescription": {
+          "type": "string",
+          "example": "this firm has specialized in feasibility studies for the design of the industrial parks as well as industrial land utilization. AC Consortium Pte Ltd has been actively involved in the comprehensive design of numerous industrial buildings catering to many different trades in the manufacturing and fabrication sector."
+        },
+        "Media": {
+          "type": "object",
+          "properties": {
+            "Header": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/T3/MWM1686LRCMFY24JRT3.jpg"
+            },           
+            "TabletBanner": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/W5/MWR45K6Z3FVNVMCQMW5.jpg"
+            },
+            "MobileLogo": {
+              "type": "string",
+              "example": "http://img.icbdr.com/MediaManagement/H9/MXK36Z6XLWFD1R28NH9.jpg"
+            },           
+            "Video": {
+              "type": "string",
+              "example": "5371882024001"
+            }        
+          }
+        },
+        "Widgets" :{
+          "type": "object",
+          "properties": {
+            "Facebook": {
+              "type": "string",
+              "example": "noodlesandcompany"
+            },
+            "LinkedIn": {
+              "type": "string",
+              "example": "company/medzed-llc"
+            },
+            "Twitter": {
+              "type": "string",
+              "example": "BauerGroup"
+            }
+          }
         }
       }      
     },
