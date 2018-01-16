@@ -82,12 +82,6 @@
               "$ref": "#/definitions/GetJobBrandingListResponse"
             }
           },
-          "400": {
-            "description": "Bad Request: Invalid account ID",
-            "schema": {
-              "$ref": "#/definitions/Err400JobBrandingResponse"
-            }
-         },
           "404": {
             "description": "Not Found"
           },
