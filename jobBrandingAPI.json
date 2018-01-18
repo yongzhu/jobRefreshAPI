@@ -129,7 +129,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Vidoe branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive or Deleted",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Vidoe branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }

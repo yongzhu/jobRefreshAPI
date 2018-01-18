@@ -243,15 +243,11 @@
             "type": "string",
             "example":"demo.jpg"
           },
-          "GroupDID": {
-            "type": "number",
-            "example":"2"
-          },  
-          "SubGroupDID": {
+          "MediaSubGroupDid": {
             "type": "number",
             "example":"2"
           },         
-          "FileBytes": {
+          "Content": {
             "type": "string",
             "example":"0x47494638396102037200F70000AD9A899CBDCECA8757B9CCDAE9D9"
           }
