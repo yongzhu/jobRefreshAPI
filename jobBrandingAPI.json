@@ -129,7 +129,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Vidoe branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Vidoe branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive or Deleted",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -183,7 +183,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Type can't upgrade to Premium since Premium branding isn't availabe, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Deactive or Delete",
+            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Type can't upgrade to Premium since Premium branding isn't availabe, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive or Deleted",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -345,7 +345,7 @@
           "example": "Active",
           "enum": [
             "Active",
-            "Deactive"
+            "Inactive"
           ]
         },
         "Tracking": {
@@ -426,8 +426,8 @@
           "example": "Active",
           "enum": [
             "Active",
-            "Deactivate",
-            "Delete"
+            "Inactive",
+            "Deleted"
           ]
         },     
         "Tracking": {
