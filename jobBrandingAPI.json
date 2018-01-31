@@ -129,7 +129,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Video branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive",
+            "description": "Bad Request: Name is required，Type is required, Type should be Standard or Premium, Premium branding isn't available, Video branding isn't available, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive, Length of Name should less than 128, Length of Tracking should less than 512, Length of Header should less than 1024, Length of TabletBanner should less than 1024, Length of MobileLogo should less than 1024, Length of Video should less than 20, Length of Facebook should less than 256, Length of Twitter should less than 256, Length of LinkedIn should less than 256",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
@@ -183,7 +183,7 @@
             }
           },
           "400": {
-            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Type can't upgrade to Premium since Premium branding isn't availabe, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive or Deleted",
+            "description": "Bad Request: Id is requied, No branding exists with Id, Name is required，Type is required, Type should be Standard or Premium, Type can't upgrade to Premium since Premium branding isn't availabe, Media Header shouldn't be flash if Type is Standard, Status is required, Status should be Active or Inactive or Deleted, Length of Name should less than 128, Length of Tracking should less than 512, Length of Header should less than 1024, Length of TabletBanner should less than 1024, Length of MobileLogo should less than 1024, Length of Video should less than 20, Length of Facebook should less than 256, Length of Twitter should less than 256, Length of LinkedIn should less than 256",
             "schema": {
               "$ref": "#/definitions/Err400JobBrandingResponse"
             }
