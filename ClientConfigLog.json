@@ -6,12 +6,12 @@
         "title": "Micro Service: Client Config Log "
     },
     "host": "api.careerbuilder.com",
-    "basePath": "/corporate/AdminTools",
+    "basePath": "/core/audit-logs",
     "schemes": [
         "https"
     ],
     "paths": {
-        "/ClientConfigLogs": {
+        "/event-logs": {
             "post": {
                 "tags": [
                     "Create Client Config Log Data"
