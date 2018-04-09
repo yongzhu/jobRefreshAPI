@@ -409,13 +409,13 @@
           "type": "string",
           "example":"http://img.icbdr.com/MediaManagement/T3/MWM1686LRCMFY24JRT3.jpg"
         },
-        "AttachedJobCount": {
+        "AttachedActiveJobCount": {
           "type": "number",
-          "example": 0
+          "example": 11
         },
         "AttachedInactiveJobCount": {
           "type": "number",
-          "example": 0
+          "example": 22
         },
         "UpdatedTime": {
           "type": "string",
