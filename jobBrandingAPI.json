@@ -417,6 +417,10 @@
           "type": "number",
           "example": 22
         },
+        "CreatedTime": {
+          "type": "string",
+          "example":"2015-01-04"
+        },
         "UpdatedTime": {
           "type": "string",
           "example":"2015-01-04"
