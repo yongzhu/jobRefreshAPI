@@ -678,7 +678,7 @@
         },
         "PageSize": {
           "type": "number",
-          "example": 25
+          "example": 20
         },  
         "PageNo": {
           "type": "number",
