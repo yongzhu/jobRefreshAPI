@@ -887,17 +887,17 @@
         },
         "JobsPerPage": {
           "type": "number",
-          "example":25
+          "example":20
         },
         "CurrentPageJobCount": {
           "type": "number",
-          "example":25
+          "example":20
         },                   
         "SortBy": {
           "type": "string",
           "example": "Status",
           "enum": [
-            "Title",
+            "JobTitle",
             "Location",
             "JobId",
             "Status",
