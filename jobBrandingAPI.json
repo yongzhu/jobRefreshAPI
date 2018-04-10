@@ -291,7 +291,7 @@
             }
           },
           "400": {
-            "description": "BrandingId should not be empty. IsJobsAttached should be True or False. Status should be All, Active or Inactive if IsJobsAttached is True. SortBy should be Title, Location, JobId, Status or ExpireDate. SortDirection should be Asc or Desc.",
+            "description": "BrandingId should not be empty. IsJobsAttached should be True or False. Status should be All, Active or Inactive if IsJobsAttached is True. SortBy should be JobTitle, Location, JobId, Status or ExpireDate. SortDirection should be Asc or Desc.",
             "schema": {
               "$ref": "#/definitions/Err400AttachJobResponse"
             }
@@ -686,9 +686,9 @@
         },  
         "SortBy": {
           "type": "string",
-          "example": "Title" ,
+          "example": "JobTitle" ,
           "enum": [
-            "Title",
+            "JobTitle",
             "Location",
             "JobId",
             "Status",
