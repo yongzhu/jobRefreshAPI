@@ -117,9 +117,7 @@
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/Attach": {      
+      },
       "post": {
         "tags": [
           "job attach branding API"
