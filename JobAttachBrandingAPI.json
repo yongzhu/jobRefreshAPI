@@ -22,7 +22,7 @@
         "tags": [
           "job attach branding API"
         ],
-        "summary": "get jobs list by brandingId",
+        "summary": "get jobs that attached brandingId",
         "description": "",
         "operationId": "getJobListBrandingId",
         "consumes": [
@@ -34,18 +34,7 @@
             "name": "brandingId", 
             "required": true,
             "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "isJobsAttached", 
-            "default": "True",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "True",
-              "False"
-            ]
-          },
+          },         
           {
             "in": "query",
             "name": "status", 
@@ -105,7 +94,7 @@
             }
           },
           "400": {
-            "description": "brandingId should not be empty. isJobsAttached should be True or False. status should be All, Active or Inactive if IsJobsAttached is True. sortBy should be JobTitle, Location, JobId, Status or ExpireDate. sortDirection should be Asc or Desc.",
+            "description": "brandingId should not be empty. status should be All, Active or Inactive. sortBy should be JobTitle, Location, JobId, Status or ExpireDate. sortDirection should be Asc or Desc.",
             "schema": {
               "$ref": "#/definitions/Err400AttachJobResponse"
             }
@@ -120,9 +109,9 @@
       },
       "post": {
         "tags": [
-          "job attach branding API"
+          "job detach branding API"
         ],
-        "summary": "attach or detach branding to or from jobs",
+        "summary": "detach branding from jobs",
         "description": "",
         "operationId": "AttachJob",
         "consumes": [
@@ -157,7 +146,7 @@
             }
           },
           "400": {
-            "description": "BrandingId should not be empty. Action is required. Action should be Attach or Detach. Jobs list is required.",
+            "description": "BrandingId should not be empty. Jobs list is required.",
             "schema": {
               "$ref": "#/definitions/Err400AttachJobResponse"
             }
@@ -175,20 +164,12 @@
   "definitions": {
     "BrandingAttachJobResponse": {
       "type": "object",      
-      "properties": {        
-        "Action": {
-          "type": "string",
-          "example": "Detach",
-          "enum": [
-            "Attach",
-            "Detach"
-          ]
-        },   
-        "JobCount": {
+      "properties": {  
+        "SuccessDetachJobsCount": {
           "type": "number",
           "example":2
         },
-        "Jobs": {
+        "SuccessDetachJobDIDs": {
           "type": "array",
           "items": {
             "type": "string"
@@ -201,23 +182,14 @@
       "type": "object",   
       "required": [
         "BrandingId",
-        "Action",
         "Jobs"
       ],    
       "properties": {    
         "BrandingId": {
           "type": "string",
           "example": "JBJH6RZ6P98YDXYV77ZQ"
-        },       
-        "Action": {
-          "type": "string",
-          "example": "Detach",
-          "enum": [
-            "Attach",
-            "Detach"
-          ]
         },   
-        "Jobs": {
+        "JobDIDs": {
           "type": "array",
           "items": {
             "type": "string"
@@ -225,65 +197,7 @@
           "example":["JHP7796JVM94DQ0DCYP","J8J3Z86WWHWN49S1W5H","JGW0R365X7L47GVRFM1"]
         }
       }      
-    },    
-    "JobAttachedReqObj": {
-      "type": "object",   
-      "required": [
-        "BrandingId",
-        "IsJobsAttached",
-        "Status"
-      ],    
-      "properties": {    
-        "BrandingId": {
-          "type": "string",
-          "example": "JBJH6RZ6P98YDXYV77ZQ"
-        },       
-        "IsJobsAttached": {
-          "type": "string",
-          "example": "True",
-          "enum": [
-            "True",
-            "False"
-          ]
-        },
-        "Status": {
-          "type": "string",
-          "example": "All",
-          "enum": [
-            "All",
-            "Active",
-            "Inactive"
-          ]
-        },
-        "PageSize": {
-          "type": "number",
-          "example": 20
-        },  
-        "PageNo": {
-          "type": "number",
-          "example": 1   
-        },  
-        "SortBy": {
-          "type": "string",
-          "example": "JobTitle" ,
-          "enum": [
-            "JobTitle",
-            "Location",
-            "JobId",
-            "Status",
-            "ExpireDate"
-          ]       
-        },  
-        "SortDirection": {
-          "type": "number",
-          "example": "Asc" ,
-          "enum": [
-            "Desc",
-            "Asc"
-          ]         
-        }
-      }      
-    },
+    },  
     "Err400JobBrandingResponse": {
       "type": "object",
       "properties": {
@@ -380,11 +294,7 @@
         "JobId": {
           "type": "string",
           "example": "ASDF-ASDF-AG"          
-        },   
-        "BrandingId": {
-          "type": "string",
-          "example": "JB8Q1D47617WY06W04QN"          
-        },   
+        }, 
         "ExpireDate": {
           "type": "string",
           "example":"07/13/2016"
